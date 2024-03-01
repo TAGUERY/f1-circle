@@ -1,12 +1,10 @@
 # f1-circle
 
 **Contexte** : 
-_d'où viennent les données, qui les a créées et dans quel contexte
-_
+_d'où viennent les données, qui les a créées et dans quel contexte_
 
 **Description** 
-_Comment sont structurées les données ? Parler du format, des attributs et du type de données
-_
+_Comment sont structurées les données ? Parler du format, des attributs et du type de données_
 
 **But**: 
 _qu'est-ce que vous voulez découvrir ? Des tendances ? Vous voulez explorer ou expliquer?_
