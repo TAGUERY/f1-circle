@@ -4,8 +4,8 @@
 
 Données : 
 - pilotes, circuits, écurie : formula1.com
- - site officiel de la f1 qui regroupe toutes les données des pilotes, circuits et écuries
- - Toutes les données depuis le début de la F1 sont stockés dans leur database.
+  - site officiel de la f1 qui regroupe toutes les données des pilotes, circuits et écuries
+  - Toutes les données depuis le début de la F1 sont stockés dans leur database.
    
 - circuits svg : https://github.com/f1laps/f1-track-vectors
   - circuits svg qui seront téléchargés pour être affichée sur le site.
