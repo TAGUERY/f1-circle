@@ -18,9 +18,17 @@ Les données :
     3.2 (d'autres données à trouver sur des pilotes/circuits/etc. 
 
 **Description** 
- Toutes les données sont affichées sur des sites web, il faudra donc les extraire manuellement. 
- - Les données numériques sur les pilotes, circuits et constructeurs seront mise dans un fichier JSON.
- - Les données textuelles comme les annecdotes, pourront être mise dans un tableau. Nous pourrons piocher dans le tableau pour ajouter les annecdotes sur le site web.
+Les données sont organisées de manière structurée pour assurer une gestion efficace et une utilisation simplifiée dans le cadre du projet. Voici comment chaque type de données sera structuré :
+ 
+    Données Numériques (JSON):
+        Les données relatives aux pilotes, circuits et constructeurs seront stockées dans des fichiers JSON distincts.
+        Chaque fichier JSON aura une structure définie avec des attributs spécifiques pour chaque entité (pilote, circuit, écurie).
+        Par exemple, le fichier "pilotes.json" pourrait contenir des attributs tels que "Nom", "Nationalité", "Équipe actuelle", etc.
+ 
+    Données Textuelles (Tableau):
+        Les anecdotes et autres données textuelles seront organisées dans un tableau CSV.
+        Chaque élément du tableau représentera une anecdote ou une information textuelle.
+        L'accès aux informations se fera de manière dynamique en tirant aléatoirement des éléments du tableau pour enrichir le contenu du site web.
 
 **But**: 
 Le projet est conçu pour expliquer le monde de la Formule 1, il permet de faire d'écouvrir la F1 de manière simple avec des annecdotes ainsi que de simple informations sur les pilotes/écuries/pistes. 
