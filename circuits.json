@@ -1,0 +1,14 @@
+
+{
+    "circuits": [
+        {
+            "nom": "nom",
+            "pays": "pays",
+            "premiere_apparition" : "date",
+            "nombre_de_tour": "nombre",
+            "longueur": "distance_tour",
+            "distance_de_la_course" : "distance_de_la_course",
+            "record_du_tour" : "temps"
+        }
+    ]
+}
