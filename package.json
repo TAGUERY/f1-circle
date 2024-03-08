@@ -1,0 +1,16 @@
+{
+  "name": "f1-circle",
+  "version": "1.0.0",
+  "description": "**Contexte** :",
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
