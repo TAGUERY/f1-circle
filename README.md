@@ -37,3 +37,7 @@ Le but est de faire apprendre de manière agréable et amusante avec des informa
 
 **Références**: 
 Les données utilisées via le site de la formule 1 est utilisé par beaucoup d'autres personnes. En effet, toutes les applications parlant de F1, site de sport mécanique, etc. peuvent utiliser ces donner pour les affichers selon leur envie sur le site internet. Toutes ces données seront donc très souvent utilisées dans le contexte du sport automobile. Leur utilisation peut varier selon les sites/applications. 
+
+
+** Maquette Figma **
+https://www.figma.com/file/aHjqff5qHTj6d1IeCdGtXg/Maquette-f1circle?type=design&node-id=0%3A1&mode=design&t=QFFKYciPC3J9L0yE-1
