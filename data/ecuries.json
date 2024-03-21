@@ -1,13 +1,84 @@
 {
     "ecuries": [
         {
-            "nom": "",
-            "team_principal": "",
-            "fournisseur_moteur": "",
-            "premier_gp": "",
-            "victoire": 1,
-            "nb_championnat_constructeur": 1,
-            "meilleur_resultat": 1
+            "nom": "Oracle Red Bull Racing",
+            "base": "Milton Keynes, United Kingdom",
+            "power_unit": "Honda RBPT",
+            "premier_gp": 1997,
+            "nombre_premieres_places": 115,
+            "nombre_de_coupes_du_monde": 6
+        },
+        {
+            "nom": "Scuderia Ferrari",
+            "base": "Maranello, Italy",
+            "power_unit": "Ferrari",
+            "premier_gp": 1950,
+            "nombre_premieres_places": 244,
+            "nombre_de_coupes_du_monde": 16
+        },
+        {
+            "nom": "McLaren Formula 1 Team",
+            "base": "Woking, United Kingdom",
+            "power_unit": "Mercedes",
+            "premier_gp": 1966,
+            "nombre_premieres_places": 183,
+            "nombre_de_coupes_du_monde": 8
+        },
+        {
+            "nom": "Mercedes-AMG PETRONAS F1 Team",
+            "base": "Brackley, United Kingdom",
+            "power_unit": "Mercedes",
+            "premier_gp": 1970,
+            "nombre_premieres_places": 116,
+            "nombre_de_coupes_du_monde": 8
+        },
+        {
+            "nom": "Aston Martin Aramco F1 Team",
+            "base": "Silverstone, United Kingdom",
+            "power_unit": "Mercedes",
+            "premier_gp": 2018,
+            "nombre_premieres_places": 1,
+            "nombre_de_coupes_du_monde": 0
+        },
+        {
+            "nom": "MoneyGram Haas F1 Team",
+            "base": "Kannapolis, United States",
+            "power_unit": "Ferrari",
+            "premier_gp": 2016,
+            "nombre_premieres_places": 4,
+            "nombre_de_coupes_du_monde": 0
+        },
+        {
+            "nom": "Williams Racing",
+            "base": "Grove, United Kingdom",
+            "power_unit": "Mercedes",
+            "premier_gp": 1978,
+            "nombre_premieres_places": 114,
+            "nombre_de_coupes_du_monde": 9
+        },
+        {
+            "nom": "Stake F1 Team Kick Sauber",
+            "base": "Hinwil, Switzerland",
+            "power_unit": "Ferrari",
+            "premier_gp": 1993,
+            "nombre_premieres_places": 1,
+            "nombre_de_coupes_du_monde": 0
+        },
+        {
+            "nom": "Visa Cash App RB Formula One Team",
+            "base": "Faenza, Italy",
+            "power_unit": "Honda RBPT",
+            "premier_gp": 1985,
+            "nombre_premieres_places": 2,
+            "nombre_de_coupes_du_monde": 0
+        },
+        {
+            "nom": "BWT Alpine F1 Team",
+            "base": "Enstone, United Kingdom",
+            "power_unit": "Renault",
+            "premier_gp": 1986,
+            "nombre_premieres_places": 21,
+            "nombre_de_coupes_du_monde": 2
         }
     ]
 }

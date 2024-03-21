@@ -1,0 +1,24 @@
+{
+    "annecdotes": [
+        {
+            "question": "How much water do Formula 1 drivers lose during a race ?",
+            "reponse": "Formula 1 drivers can lose up to 3 liters of body water during a race due to the physical demands and heat inside the cockpit."
+        },
+        {
+            "question": "What is the record time for a tire change during a Formula 1 pit stop ?",
+            "reponse": "The record time is 1.82 seconds, achieved by the Red Bull Racing team during the Brazilian Grand Prix in 2019."
+        },
+        {
+            "question": "How many Formula 1 drivers have lost their lives in competition so far ?",
+            "reponse": "According to official reports, 52 Formula 1 drivers have lost their lives in competition."
+        },
+        {
+            "question": "Which Formula 1 track is the shortest in terms of racing distance ?",
+            "reponse": "The Circuit de Monaco is the shortest Formula 1 track, with a race distance of about 260 kilometers."
+        },
+        {
+            "question": "What is the age requirement for Formula 1 drivers ?",
+            "reponse": "Formula 1 drivers must be at least 18 years old to compete in the championship."
+        }
+    ]
+}
