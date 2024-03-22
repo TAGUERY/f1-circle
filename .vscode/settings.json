@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "Ajoutez",
         "Allemagne",
         "Alonso",
         "annecdotes",
@@ -45,5 +46,28 @@
         "Verstappen",
         "Vettel",
         "victoires"
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:f1-circle}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    },
+    "cSpell.ignoreWords": [
+        "Ajouter",
+        "Calculer",
+        "Créer",
+        "Réinitialisation",
+        "Supposons",
+        "autour",
+        "ayons",
+        "cercle",
+        "chaque",
+        "dessous",
+        "défaut",
+        "personnalisés",
+        "xlink"
     ]
 }

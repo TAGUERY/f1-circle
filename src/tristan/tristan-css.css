@@ -1,0 +1,24 @@
+/* Réinitialisation des styles par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Ajoutez vos styles personnalisés ci-dessous */
+#bg {
+  background-color: #f4f4f4;
+}
+
+#hi {
+  height: 500px;
+}
