@@ -3,7 +3,7 @@
         {
             "prenom": "Max",
             "nom": "Verstappen",
-            "numero_pilote": 1,
+            "numero_pilote": 33,
             "nombre_de_victoires": 56,
             "equipe": "Red Bull Racing",
             "pays_origine": "Netherlands",
@@ -165,7 +165,7 @@
             "nom": "Stroll",
             "numero_pilote": 18,
             "nombre_de_victoires": 0,
-            "equipe": "Racing Point",
+            "equipe": "Aston Martin",
             "pays_origine": "Canada",
             "nb_podiums": 3,
             "points_totaux": 269,
