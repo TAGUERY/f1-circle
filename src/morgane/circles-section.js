@@ -1,3 +1,5 @@
+import pilotes from "/data/pilotes.json";
+
 function createFourCircle() {
   // Obtenir la largeur et la hauteur de la fenêtre
   let width = window.innerWidth;
@@ -13,77 +15,77 @@ function createFourCircle() {
     .attr("width", width)
     .attr("height", height);
 
-  // Cercle 1, en haut à gauche
-  let circle1 = svg.append("g")
-    .attr("transform", `translate(${-radius}, ${height / 4})`);
-
-  circle1.append("circle")
-    .attr("cx", 0)
-    .attr("cy", 0)
+  //cercle 1, en haut à gauche
+  let circle1 = svg;
+  circle1
+    .append("circle")
+    .attr("cx", width / 2 - radius / 1.3)
+    .attr("cy", height / 4)
     .attr("r", radius / 1.5)
     .style("fill", "red");
 
-  circle1.append("text")
+  circle1
+    .append("text")
     .text("Pilotes")
     .style("fill", "white")
     .style("font-size", "2rem")
     .style("text-anchor", "middle")
-    .attr("x", 0)
-    .attr("y", 0);
+    .attr("x", width / 2 - radius / 1.3)
+    .attr("y", height / 4);
 
-  // Cercle 2, en haut à droite
-  let circle2 = svg.append("g")
-    .attr("transform", `translate(${width + radius}, ${height / 4})`);
-
-  circle2.append("circle")
-    .attr("cx", 0)
-    .attr("cy", 0)
+  //cercle 2, en haut à droite
+  let circle2 = svg;
+  circle2
+    .append("circle")
+    .attr("cx", width / 2 + radius / 1.3)
+    .attr("cy", height / 4)
     .attr("r", radius / 1.5)
     .style("fill", "red");
 
-  circle2.append("text")
+  circle2
+    .append("text")
     .text("Circuits")
     .style("fill", "white")
     .style("font-size", "2rem")
     .style("text-anchor", "middle")
-    .attr("x", 0)
-    .attr("y", 0);
+    .attr("x", width / 2 + radius / 1.3)
+    .attr("y", height / 4);
 
-  // Cercle 3, en bas à gauche
-  let circle3 = svg.append("g")
-    .attr("transform", `translate(${-radius}, ${(3 * height) / 4})`);
-
-  circle3.append("circle")
-    .attr("cx", 0)
-    .attr("cy", 0)
+  //cercle 3, en bas à gauche
+  let circle3 = svg;
+  circle3
+    .append("circle")
+    .attr("cx", width / 2 - radius / 1.3)
+    .attr("cy", (3 * height) / 4)
     .attr("r", radius / 1.5)
     .style("fill", "red");
 
-  circle3.append("text")
+  circle3
+    .append("text")
     .text("Écuries")
     .style("fill", "white")
     .style("font-size", "2rem")
     .style("text-anchor", "middle")
-    .attr("x", 0)
-    .attr("y", 0);
+    .attr("x", width / 2 - radius / 1.3)
+    .attr("y", (3 * height) / 4);
 
-  // Cercle 4, en bas à droite
-  let circle4 = svg.append("g")
-    .attr("transform", `translate(${width + radius}, ${(3 * height) / 4})`);
-
-  circle4.append("circle")
-    .attr("cx", 0)
-    .attr("cy", 0)
+  //cercle 4, en bas à droite
+  let circle4 = svg;
+  circle4
+    .append("circle")
+    .attr("cx", width / 2 + radius / 1.3)
+    .attr("cy", (3 * height) / 4)
     .attr("r", radius / 1.5)
     .style("fill", "red");
 
-  circle4.append("text")
+  circle4
+    .append("text")
     .text("Constructeurs")
     .style("fill", "white")
     .style("font-size", "2rem")
     .style("text-anchor", "middle")
-    .attr("x", 0)
-    .attr("y", 0);
+    .attr("x", width / 2 + radius / 1.3)
+    .attr("y", (3 * height) / 4);
 }
 
 export { createFourCircle };
