@@ -3,6 +3,8 @@ dist
 .parcel-cache
 node_modules
 .cache
+.vscode
+.DS_Store
 
 
 

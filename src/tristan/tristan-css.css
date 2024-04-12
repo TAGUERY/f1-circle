@@ -1,0 +1,114 @@
+/* Réinitialisation des styles par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Ajoutez vos styles personnalisés ci-dessous */
+#bg {
+  background-color: #1b1b1b;
+}
+
+.finishLine {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+#bg-before {
+  background-color: #1b1b1b;
+  height: 100vh;
+  width: 100vw;
+}
+
+#bleu {
+  background-color: blue;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+#orange {
+  background-color: #1b1b1b;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  position: absolute;
+}
+.country {
+  fill: white;
+  stroke: red;
+}
+
+#pink {
+  background-color: pink;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+#red {
+  background-color: #1b1b1b;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  padding-top: 5rem;
+  padding-left: 2rem;
+}
+#container {
+  background-color: #1b1b1b;
+}
+
+#gray {
+  padding-top: 50px;
+  background-color: #1b1b1b;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+#lights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* Aligner les éléments au centre verticalement */
+  width: 80vw;
+  height: 200px;
+  background-color: black;
+  border-radius: 50px;
+  border: 5px solid whitesmoke;
+  margin: 20px auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.light {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 20px 10px;
+}
+#gray h1 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+#gray button {
+  position: absolute; /* Utiliser position absolue pour centrer le bouton */
+  top: 50%; /* Aligner le haut du bouton au centre vertical */
+  left: 50%; /* Aligner la gauche du bouton au centre horizontal */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Décaler le bouton de moitié de sa propre taille vers le haut et la gauche */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
