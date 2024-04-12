@@ -7,7 +7,8 @@
             "nombre_de_tour": 57,
             "longueur_km": 5.412,
             "distance_de_la_course_km": 308.238,
-            "record_du_tour": 91.447
+            "record_du_tour": 91.447,
+            "img_circuit": "/data/img/circuits/bahrain.png"
         },
         {
             "nom": "Jeddah Corniche Circuit",
@@ -16,7 +17,8 @@
             "nombre_de_tour": 50,
             "longueur_km": 6.174,
             "distance_de_la_course_km": 308.45,
-            "record_du_tour": 90.734
+            "record_du_tour": 90.734,
+            "img_circuit": "/data/img/circuits/saudi_arabia.png"
         },
         {
             "nom": "Suzuka International Racing Course",
@@ -25,7 +27,8 @@
             "nombre_de_tour": 53,
             "longueur_km": 5.807,
             "distance_de_la_course_km": 307.471,
-            "record_du_tour": 90.983
+            "record_du_tour": 90.983,
+            "img_circuit": "/data/img/circuits/japan.png"
         },
         {
             "nom": "Albert Park Circuit",
@@ -34,7 +37,8 @@
             "nombre_de_tour": 58,
             "longueur_km": 5.278,
             "distance_de_la_course_km": 306.124,
-            "record_du_tour": 80.235
+            "record_du_tour": 80.235,
+            "img_circuit": "/data/img/circuits/australia.png"
         },
         {
             "nom": "Shanghai International Circuit",
@@ -43,7 +47,8 @@
             "nombre_de_tour": 56,
             "longueur_km": 5.451,
             "distance_de_la_course_km": 305.066,
-            "record_du_tour": 92.238
+            "record_du_tour": 92.238,
+            "img_circuit": "/data/img/circuits/china.png"
         },
         {
             "nom": "Miami International Autodrome",
@@ -52,7 +57,8 @@
             "nombre_de_tour": 57,
             "longueur_km": 5.412,
             "distance_de_la_course_km": 308.326,
-            "record_du_tour": 89.708
+            "record_du_tour": 89.708,
+            "img_circuit": "/data/img/circuits/miami.png"
         },
         {
             "nom": "Autodrome Enzo e Dino Ferrari",
@@ -61,7 +67,8 @@
             "nombre_de_tour": 63,
             "longueur_km": 4.909,
             "distance_de_la_course_km": 309.049,
-            "record_du_tour": 75.484
+            "record_du_tour": 75.484,
+            "img_circuit": "/data/img/circuits/enzo.png"
         },
         {
             "nom": "Circuit de Monaco",
@@ -70,7 +77,8 @@
             "nombre_de_tour": 78,
             "longueur_km": 3.337,
             "distance_de_la_course_km": 260.286,
-            "record_du_tour": 72.909
+            "record_du_tour": 72.909,
+            "img_circuit": "/data/img/circuits/monaco.png"
         },
         {
             "nom": "Circuit Gilles-Villeneuve",
@@ -80,7 +88,7 @@
             "longueur_km": 4.361,
             "distance_de_la_course_km": 305.27,
             "record_du_tour": 73.078,
-            "svg_circuit": "/data/img/circuits/canada.svg"
+            "img_circuit": "/data/img/circuits/canada.png"
         },
         {
             "nom": "Circuit de Barcelona-Catalunya",
@@ -90,7 +98,7 @@
             "longueur_km": 4.657,
             "distance_de_la_course_km": 307.236,
             "record_du_tour": 76.330,
-            "svg_circuit": "/data/img/circuits/spain.svg"
+            "img_circuit": "/data/img/circuits/spain.png"
         },
         {
             "nom": "Red Bull Ring",
@@ -100,7 +108,7 @@
             "longueur_km": 4.318,
             "distance_de_la_course_km": 306.452,
             "record_du_tour": 65.619,
-            "svg_circuit": "/data/img/circuits/austria.svg"
+            "img_circuit": "/data/img/circuits/austria.png"
         },
         {
             "nom": "Silverstone Circuit",
@@ -110,7 +118,7 @@
             "longueur_km": 5.891,
             "distance_de_la_course_km": 306.198,
             "record_du_tour": 87.097,
-            "svg_circuit": "/data/img/circuits/greatbritain.svg"
+            "img_circuit": "/data/img/circuits/greatbritain.png"
         },
         {
             "nom": "Hungaroring",
@@ -120,7 +128,7 @@
             "longueur_km": 4.381,
             "distance_de_la_course_km": 306.63,
             "record_du_tour": 76.627,
-            "svg_circuit": "/data/img/circuits/hungary.svg"
+            "img_circuit": "/data/img/circuits/hungary.png"
         },
         {
             "nom": "Circuit de Spa-Francorchamps",
@@ -130,7 +138,7 @@
             "longueur_km": 7.004,
             "distance_de_la_course_km": 308.052,
             "record_du_tour": 106.286,
-            "svg_circuit": "/data/img/circuits/belgium.svg"
+            "img_circuit": "/data/img/circuits/belgium.png"
         },
         {
             "nom": "Circuit Zandvoort",
@@ -140,7 +148,7 @@
             "longueur_km": 4.259,
             "distance_de_la_course_km": 306.587,
             "record_du_tour": 71.097,
-            "svg_circuit": "/data/img/circuits/netherlands.svg"
+            "img_circuit": "/data/img/circuits/netherlands.png"
         },
         {
             "nom": "Autodromo Nazionale Monza",
@@ -150,7 +158,7 @@
             "longueur_km": 5.793,
             "distance_de_la_course_km": 306.72,
             "record_du_tour": 81.046,
-            "svg_circuit": "je sais pas"
+            "img_circuit": "/data/img/circuits/monza.png"
         },
         {
             "nom": "Baku City Circuit",
@@ -160,7 +168,7 @@
             "longueur_km": 6.003,
             "distance_de_la_course_km": 306.049,
             "record_du_tour": 103.009,
-            "svg_circuit": "/data/img/circuits/azerbaijan.svg"
+            "img_circuit": "/data/img/circuits/azerbaijan.png"
         },
         {
             "nom": "Marina Bay Street Circuit",
@@ -170,7 +178,7 @@
             "longueur_km": 4.94,
             "distance_de_la_course_km": 306.143,
             "record_du_tour": 95.867,
-            "svg_circuit": "/data/img/circuits/singapore.svg"
+            "img_circuit": "/data/img/circuits/singapore.png"
         },
         {
             "nom": "Circuit of The Americas",
@@ -180,7 +188,7 @@
             "longueur_km": 5.513,
             "distance_de_la_course_km": 308.405,
             "record_du_tour": 96.169,
-            "svg_circuit": "je sais pas"
+            "img_circuit": "/data/img/circuits/americas.png"
         },
         {
             "nom": "Autódromo Hermanos Rodríguez",
@@ -190,7 +198,7 @@
             "longueur_km": 4.304,
             "distance_de_la_course_km": 305.354,
             "record_du_tour": 77.774,
-            "svg_circuit": "/data/img/circuits/singapore.svg"
+            "img_circuit": "/data/img/circuits/mexico.png"
         },
         {
             "nom": "Autódromo José Carlos Pace",
@@ -199,7 +207,8 @@
             "nombre_de_tour": 71,
             "longueur_km": 4.309,
             "distance_de_la_course_km": 305.879,
-            "record_du_tour": 70.540
+            "record_du_tour": 70.540,
+            "img_circuit": "/data/img/circuits/brazil.png"
         },
         {
             "nom": "Las Vegas Strip Circuit",
@@ -208,7 +217,8 @@
             "nombre_de_tour": 50,
             "longueur_km": 6.201,
             "distance_de_la_course_km": 309.958,
-            "record_du_tour": 95.490
+            "record_du_tour": 95.490,
+            "img_circuit": "/data/img/circuits/vegas.png"
         },
         {
             "nom": "Lusail International Circuit",
@@ -217,7 +227,8 @@
             "nombre_de_tour": 57,
             "longueur_km": 5.419,
             "distance_de_la_course_km": 308.611,
-            "record_du_tour": 84.319
+            "record_du_tour": 84.319,
+            "img_circuit": "/data/img/circuits/qatar.png"
         },
         {
             "nom": "Yas MArina Circuit",
@@ -226,7 +237,8 @@
             "nombre_de_tour": 58,
             "longueur_km": 5.281,
             "distance_de_la_course_km": 306.183,
-            "record_du_tour": 86.103
+            "record_du_tour": 86.103,
+            "img_circuit": "/data/img/circuits/abu_dhabi.png"
         }
     ]
 }
