@@ -108,6 +108,9 @@ function createGraphicsPilotes() {
     .attr("stroke", "orange")
     .call(yAxis);
 }
+
+//separation
+
 function createWorldMap() {
   const width = window.innerWidth / 1.2;
   const height = window.innerHeight / 2;
@@ -118,7 +121,7 @@ function createWorldMap() {
     .attr("height", height);
   const projection = d3
     .geoMercator()
-    .scale(140)
+    .scale(100)
     .translate([width / 2, height / 1.4]);
   const path = d3.geoPath(projection);
   const g = svg.append("g");
@@ -131,6 +134,12 @@ function createWorldMap() {
     }
     pilotesParPays[pilote.pays_origine].push(pilote);
   });
+
+  // Mettre le pays en question en bleu
+  const selectedCountry = "France"; // Remplacez "France" par le pays de votre choix
+  g.selectAll(".country")
+    .filter((d) => d.properties.name === selectedCountry)
+    .style("fill", "blue");
 
   // Dessiner les pays
   d3.json(
