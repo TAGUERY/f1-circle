@@ -157,6 +157,8 @@ function createPilotesCircle() {
         .attr("y", y) // Réinitialiser la position y de l'image
         .attr("width", radius / 2.5)
         .attr("height", radius / 2.5);
+      //middleZone.selectAll("*").attr("opacity", 0);
+      //animation de l'opacité jusqu'à 0
       middleZone.selectAll("*").remove();
       middleZone.append(() => baseImageAboveText.node());
       middleZone.append(() => baseTexteZone.node());

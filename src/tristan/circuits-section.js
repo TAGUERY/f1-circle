@@ -10,7 +10,7 @@ function createCircuitsCircle() {
 
   // Créer un SVG
   let svg = d3
-    .select("#bg-circuits")
+    .select("#bg-pilotesCircuits")
     .append("svg")
     .attr("width", width)
     .attr("height", height);
@@ -30,9 +30,10 @@ function createCircuitsCircle() {
       "https://logos-world.net/wp-content/uploads/2023/12/F1-Logo.png"
     )
     .attr("y", height / 2 - radius / 1.7) // Positionner l'image au-dessus du texte
-    .attr("x", width / 2 - radius / 2 + radius * 0.05)
+    .attr("x", width / 2 - radius / 2)
     .attr("width", radius)
-    .attr("height", radius);
+    .attr("height", radius)
+    .style("opacity", 1);
 
   let baseTexteZone = svg
     .append("text")
@@ -83,29 +84,27 @@ function createCircuitsCircle() {
 
     let image = svg
       .append("image")
-      .attr(
-        "xlink:href",
-        "https://enseignants.lumni.fr/images_v5/lumni-v2/notice/1200x630/210/ME00000005180.jpeg"
-      )
+      .attr("xlink:href", url.img_circuit)
       .attr("x", x)
       .attr("y", y)
-      .attr("width", radius / 2.5)
-      .attr("height", radius / 2.5);
+      .attr("width", radius / 4)
+      .attr("height", radius / 4)
+      .style("opacity", 1); // Définir l'opacité initiale à 1
 
     image.on("mouseover", function () {
       d3.select(this)
         .transition()
         .duration(200)
-        .attr("x", x - radius / 20) // Déplacer l'image vers la gauche
-        .attr("y", y - radius / 20) // Déplacer l'image vers le haut
+        .attr("x", x - radius / 10) // Déplacer l'image vers la gauche
+        .attr("y", y - radius / 10) // Déplacer l'image vers le haut
         .attr("width", radius / 2)
         .attr("height", radius / 2)
-        .style("fill", "red");
+        .style("fill", "red")
+        .style("z-index", 10000)
+        .style("opacity", 1); // Maintenir l'opacité de l'image survolée à 1
+      d3.selectAll("image:not(:hover)").style("opacity", 0.3);
 
-      circuitLeftImage.attr(
-        "xlink:href",
-        "https://enseignants.lumni.fr/images_v5/lumni-v2/notice/1200x630/210/ME00000005180.jpeg"
-      );
+      circuitLeftImage.attr("xlink:href", url.img_circuit);
       middleZone.selectAll("*").remove();
       middleZone.append(() => circuitLeftImage.node());
       middleZone.append(() => circuitNameZone.node());
@@ -151,11 +150,14 @@ function createCircuitsCircle() {
         .duration(200)
         .attr("x", x) // Réinitialiser la position x de l'image
         .attr("y", y) // Réinitialiser la position y de l'image
-        .attr("width", radius / 2.5)
-        .attr("height", radius / 2.5);
+        .attr("width", radius / 4)
+        .style("z-index", 1)
+        .attr("height", radius / 4);
+      d3.selectAll("image").style("opacity", 1); // Réinitialiser l'opacité de toutes les images à 100%
       middleZone.selectAll("*").remove();
       middleZone.append(() => baseImageAboveText.node());
       middleZone.append(() => baseTexteZone.node());
+      baseImageAboveText.style("opacity", 1);
     });
   });
 }
