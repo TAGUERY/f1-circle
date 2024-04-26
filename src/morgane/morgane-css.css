@@ -22,6 +22,7 @@ body {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+
 #bg-before {
   background-color: #1b1b1b;
   height: 100vh;
@@ -42,6 +43,7 @@ body {
   padding: 2rem;
   position: absolute;
 }
+
 .country {
   fill: white;
   stroke: red;
@@ -62,6 +64,7 @@ body {
   padding-top: 5rem;
   padding-left: 2rem;
 }
+
 #container {
   background-color: #1b1b1b;
 }
@@ -78,7 +81,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; /* Aligner les éléments au centre verticalement */
+  align-items: center;
+  /* Aligner les éléments au centre verticalement */
   width: 80vw;
   height: 200px;
   background-color: black;
@@ -88,6 +92,7 @@ body {
   padding-left: 30px;
   padding-right: 30px;
 }
+
 .light {
   width: 100px;
   height: 100px;
@@ -95,20 +100,37 @@ body {
   border-radius: 50%;
   margin: 20px 10px;
 }
+
 #gray h1 {
   text-align: center;
   color: whitesmoke;
 }
 
 #gray button {
-  position: absolute; /* Utiliser position absolue pour centrer le bouton */
-  top: 50%; /* Aligner le haut du bouton au centre vertical */
-  left: 50%; /* Aligner la gauche du bouton au centre horizontal */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Décaler le bouton de moitié de sa propre taille vers le haut et la gauche */
+  position: absolute;
+  /* Utiliser position absolue pour centrer le bouton */
+  top: 50%;
+  /* Aligner le haut du bouton au centre vertical */
+  left: 50%;
+  /* Aligner la gauche du bouton au centre horizontal */
+  transform: translate(-50%,
+      -50%);
+  /* Décaler le bouton de moitié de sa propre taille vers le haut et la gauche */
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.reponse {
+  /* Styles pour les réponses */
+  fill: white;
+  font-size: 1rem;
+  text-anchor: middle;
+}
+
+.chiffre {
+  /* Styles pour les chiffres */
+  fill: white;
+  font-size: 3rem;
+  text-anchor: middle;
 }
