@@ -19,6 +19,22 @@
         {
             "question": "What is the age requirement for Formula 1 drivers ?",
             "reponse": "Formula 1 drivers must be at least 18 years old to compete in the championship."
+        },
+        {
+            "chiffre": "1004",
+            "reponse": "is the number of drivers who have driven in F1 Grand Prix"
+        },
+        {
+            "chiffre": "90 millions",
+            "reponse": "viewers watch F1 every weekend"
+        },
+        {
+            "chiffre": "10.6 seconds",
+            "reponse": "is the time for a Formula 1 car to go from 1 to 300 km/h"
+        },
+        {
+            "chiffre": "12 millions dollars",
+            "reponse": "is the price of a Formula 1, of which 10 million is for the engine only"
         }
     ]
 }
