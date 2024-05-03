@@ -6,17 +6,23 @@ import { miniSpeedGame } from "./minigame-section.js";
 const togglePilotsCircuitsBtn = document.querySelector(".switch__input");
 const bgPilotsCircuits = document.querySelector("#bg-pilotesCircuits");
 
+function createPilotesCircuitCircle() {
+  if (togglePilotsCircuitsBtn.checked) {
+    createPilotesCircle();
+    console.log("createPilotesCircle");
+  } else {
+    createCircuitsCircle();
+    console.log("createCircuitsCircle");
+  }
+}
+
+createPilotesCircuitCircle();
+
 console.log("togglePilotsCircuitsBtn", togglePilotsCircuitsBtn);
 togglePilotsCircuitsBtn.addEventListener("click", () => {
   //console.log(togglePilotsCircuitsBtn.checked);
   bgPilotsCircuits.innerHTML = "";
-  if (togglePilotsCircuitsBtn.checked) {
-    console.log("createPilotesCircle");
-    createPilotesCircle();
-  } else {
-    console.log("createCircuitsCircle");
-    createCircuitsCircle();
-  }
+  createPilotesCircuitCircle();
 });
 
 createFourCircle();

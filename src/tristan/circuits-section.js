@@ -30,10 +30,9 @@ function createCircuitsCircle() {
       "https://logos-world.net/wp-content/uploads/2023/12/F1-Logo.png"
     )
     .attr("y", height / 2 - radius / 1.7) // Positionner l'image au-dessus du texte
-    .attr("x", width / 2 - radius / 2)
+    .attr("x", width / 2 - radius / 2 + radius * 0.05)
     .attr("width", radius)
-    .attr("height", radius)
-    .style("opacity", 1);
+    .attr("height", radius);
 
   let baseTexteZone = svg
     .append("text")
@@ -89,7 +88,9 @@ function createCircuitsCircle() {
       .attr("y", y)
       .attr("width", radius / 4)
       .attr("height", radius / 4)
-      .style("opacity", 1); // Définir l'opacité initiale à 1
+      .attr("class", "onCircle")
+      .style("z-index", 0)
+      .style("opacity", 1);
 
     image.on("mouseover", function () {
       d3.select(this)
@@ -97,12 +98,12 @@ function createCircuitsCircle() {
         .duration(200)
         .attr("x", x - radius / 10) // Déplacer l'image vers la gauche
         .attr("y", y - radius / 10) // Déplacer l'image vers le haut
-        .attr("width", radius / 2)
-        .attr("height", radius / 2)
+        .attr("width", radius / 2.5)
+        .attr("height", radius / 2.5)
         .style("fill", "red")
         .style("z-index", 10000)
         .style("opacity", 1); // Maintenir l'opacité de l'image survolée à 1
-      d3.selectAll("image:not(:hover)").style("opacity", 0.3);
+      d3.selectAll("image.onCircle:not(:hover)").style("opacity", 0.4);
 
       circuitLeftImage.attr("xlink:href", url.img_circuit);
       middleZone.selectAll("*").remove();

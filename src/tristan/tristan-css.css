@@ -317,20 +317,23 @@ div.affichage {
 
 #testBtn {
   --hue: 223;
-  --primary: hsl(var(--hue), 90%, 50%);
+  --primary: lightgray;
   --trans-dur: 0.6s;
   --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
-  font-size: calc(60px + (120 - 60) * (100vw - 320px) / (2560 - 320));
+  font-size: calc(86.4px + (172.8 - 86.4) * (100vw - 320px) / (2560 - 320));
   color: hsl(var(--hue), 10%, 10%);
   display: flex;
-  height: 30vh;
-  width: 30vw;
   position: absolute;
+  /* postion du bouton */
+  top: 45%;
+  left: 75%;
   transition: background-color var(--trans-dur), color var(--trans-dur);
+  transform: rotate(90deg);
 }
+
 #testBtn,
 #testBtn input {
-  font: 1em/1.5 sans-serif;
+  font: 1.44em/2.16 sans-serif;
 }
 
 body:has(.switch__input:checked) {
@@ -342,6 +345,7 @@ body:has(.switch__input:checked) {
   display: block;
   -webkit-tap-highlight-color: transparent;
 }
+
 .switch {
   margin: auto;
   position: relative;
@@ -349,36 +353,22 @@ body:has(.switch__input:checked) {
   -moz-user-select: none;
   user-select: none;
 }
-.switch__icon {
-  color: hsla(var(--hue), 10%, 80%);
-  pointer-events: none;
-  position: absolute;
-  top: 0.375em;
-  left: 0.375em;
-  width: 0.75em;
-  height: 0.75em;
-  transition: color var(--trans-dur),
-    transform var(--trans-dur) var(--trans-timing);
-}
-.switch__icon:nth-of-type(2) {
-  right: 0.375em;
-  left: auto;
-}
+
 .switch__inner,
 .switch__inner-icons {
-  border-radius: 0.5em;
+  border-radius: 1.2em;
   display: block;
   overflow: hidden;
   position: absolute;
-  top: 0.25em;
-  left: 0.25em;
-  width: 2.25em;
-  height: 1em;
+  top: 0.3em;
+  left: 0.3em;
+  width: 4.3em;
+  height: 2.5em;
 }
 .switch__inner:before,
 .switch__inner-icons {
   transition: transform var(--trans-dur) var(--trans-timing);
-  transform: translateX(-1.25em);
+  transform: translateX(-1.8em);
 }
 .switch__inner:before {
   background-color: var(--primary);
@@ -391,51 +381,84 @@ body:has(.switch__input:checked) {
 .switch__inner-icons {
   pointer-events: none;
 }
+
+/* circuit non selectionné */
+.switch__icon {
+  color: rgb(var(--hue), 25, 204);
+  pointer-events: none;
+  position: absolute;
+  top: 0.9em;
+  left: 0.5em;
+  width: 1.4em;
+  height: 1.4em;
+  transition: color var(--trans-dur),
+    transform var(--trans-dur) var(--trans-timing), opacity 0.5s;
+  opacity: 1;
+}
+
+/* casque non  selectionné */
+.switch__icon:nth-of-type(2) {
+  right: 0.7em;
+  top: 0.74em;
+  width: 1.3em;
+  height: 1.6em;
+  left: auto;
+}
+
+/*  circuit selectionné*/
 .switch__inner-icons .switch__icon {
   color: hsl(0, 0%, 100%);
-  top: 0.125em;
-  left: 0.125em;
-  transform: translateX(1.25em);
+  width: 1.8em;
+  height: 1.8em;
+  top: 0.35em;
+  left: 0.3em;
+  transform: translateX(1.8em);
 }
+
+/* casque selectionné */
 .switch__inner-icons .switch__icon:nth-child(2) {
-  right: 0.125em;
+  height: 2.3em;
+  width: 2.3em;
+  right: 0.03em;
+  top: 0.1em;
   left: auto;
 }
 .switch__input {
   background-color: hsl(0, 0%, 100%);
-  border-radius: 0.75em;
-  box-shadow: 0 0 0 0.0625em hsla(var(--hue), 90%, 50%, 0),
-    0 0.125em 0.5em hsla(var(--hue), 10%, 10%, 0.1);
+  border-radius: 1.08em;
+  box-shadow: 0 0 0 0.09em hsla(var(--hue), 90%, 50%, 0),
+    0 0.18em 0.72em hsla(var(--hue), 10%, 10%, 0.1);
   outline: transparent;
-  width: 2.75em;
-  height: 1.5em;
+  width: 3.5em;
+  height: 2.16em;
   -webkit-appearance: none;
   appearance: none;
   transition: background-color var(--trans-dur), box-shadow var(--trans-dur);
 }
 .switch__input:checked {
-  background-color: hsl(var(--hue), 10%, 10%);
+  background-color: hsl(var(--hue), 20%, 30%);
 }
 .switch__input:checked ~ .switch__icon {
-  color: hsla(var(--hue), 10%, 40%);
+  color: red;
 }
 .switch__input:checked ~ .switch__inner:before,
 .switch__input:checked ~ .switch__inner-icons {
-  transform: translateX(1.25em);
+  transform: translateX(1.8em);
 }
+
 .switch__input:not(:checked) ~ .switch__icon:first-of-type,
 .switch__input:checked ~ .switch__icon:nth-of-type(2) {
   transform: rotate(360deg);
 }
 .switch__input:checked ~ .switch__inner-icons .switch__icon:first-of-type {
-  transform: translateX(-1.25em) rotate(-360deg);
+  transform: translateX(-1.8em) rotate(-360deg);
 }
 .switch__input:checked ~ .switch__inner-icons .switch__icon:nth-of-type(2) {
-  transform: translateX(-1.25em) rotate(360deg);
+  transform: translateX(-1.8em) rotate(360deg);
 }
 .switch__input:focus-visible {
-  box-shadow: 0 0 0 0.0625em hsla(var(--hue), 90%, 50%, 1),
-    0 0.125em 0.5em hsla(var(--hue), 10%, 10%, 0.1);
+  box-shadow: 0 0 0 0.09em hsla(var(--hue), 90%, 50%, 1),
+    0 0.18em 0.72em hsla(var(--hue), 10%, 10%, 0.1);
 }
 .switch__sr {
   overflow: hidden;

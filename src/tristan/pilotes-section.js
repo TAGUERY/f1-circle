@@ -91,20 +91,25 @@ function createPilotesCircle() {
     let image = svg
       .append("image")
       .attr("xlink:href", url.casques)
-      .attr("x", x)
-      .attr("y", y)
+      .attr("x", x - radius / 15)
+      .attr("y", y - radius / 15)
+      .attr("class", "onCircle")
       .attr("width", radius / 2.5)
-      .attr("height", radius / 2.5);
+      .attr("height", radius / 2.5)
+      .style("opacity", 1);
 
     image.on("mouseover", function () {
       d3.select(this)
         .transition()
-        .duration(200)
-        .attr("x", x - radius / 20) // Déplacer l'image vers la gauche
-        .attr("y", y - radius / 20) // Déplacer l'image vers le haut
-        .attr("width", radius / 2)
-        .attr("height", radius / 2)
+        .duration(300)
+        .attr("x", x - radius / 7)
+        .attr("y", y - radius / 7)
+        .attr("width", radius / 1.8)
+        .attr("height", radius / 1.8)
+        .style("z-index", 10000)
         .style("fill", "red");
+
+      d3.selectAll("image.onCircle:not(:hover)").style("opacity", 0.4);
 
       piloteLeftImage.attr("xlink:href", url.photo);
       middleZone.selectAll("*").remove();
@@ -153,15 +158,18 @@ function createPilotesCircle() {
       d3.select(this)
         .transition()
         .duration(200)
-        .attr("x", x) // Réinitialiser la position x de l'image
-        .attr("y", y) // Réinitialiser la position y de l'image
+        .attr("x", x - radius / 15)
+        .attr("y", y - radius / 15)
         .attr("width", radius / 2.5)
-        .attr("height", radius / 2.5);
-      //middleZone.selectAll("*").attr("opacity", 0);
-      //animation de l'opacité jusqu'à 0
+        .attr("height", radius / 2.5)
+        .style("z-index", 1);
+
       middleZone.selectAll("*").remove();
+      d3.selectAll("image").style("opacity", 1); // Réinitialiser l'opacité de toutes les images à 100%
       middleZone.append(() => baseImageAboveText.node());
       middleZone.append(() => baseTexteZone.node());
+
+      baseImageAboveText.style("opacity", 1);
     });
   });
 }
