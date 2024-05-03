@@ -50,26 +50,26 @@ body {
 }
 
 #anecdote_1 {
-    top: 1025px;
-    right: 25px;
-    width: 700px;
+    top: 25.5%;
+    right: 2%;
+    width: 45%;
 }
 
 
 #anecdote_2 {
-    top: 1615px;
-    width: 625px;
-    left: 25px;
+    top: 40%;
+    width: 40%;
+    left: 2%;
 }
 
 #anecdote_3 {
-    top: 2135px;
-    right: 25px;
-    width: 800px;
+    top: 53.5%;
+    right: 2%;
+    width: 50%;
 }
 
 #anecdote_4 {
-    top: 2890px;
-    left: 25px;
-    width: 550px;
+    top: 72%;
+    left: 2%;
+    width: 35%;
 }
