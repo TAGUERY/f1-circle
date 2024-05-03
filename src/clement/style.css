@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "formula";
+    src: url("../tristan/font/Formula1-Bold_web.ttf") format("truetype");
+}
+
+
+body {
+    margin: 0;
+    height: 4000px;
+    background-color: black;
+}
+
+#divImg {
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+}
+
+
+#f1LogoHerroBanner {
+    position: fixed;
+    width: 15%;
+    height: auto;
+    top: 55vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#f1Car {
+    width: 100px;
+    height: auto;
+}
+
+.anecdote {
+    color: white;
+    font-family: "formula", sans-serif;
+    position: absolute;
+    text-align: center;
+}
+
+.firstTitleAnecdote {
+    color: #fb1b04;
+    font-size: 30px;
+}
+
+.secondTitleAnecdote {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+}
+
+#anecdote_1 {
+    top: 1025px;
+    right: 25px;
+    width: 700px;
+}
+
+
+#anecdote_2 {
+    top: 1615px;
+    width: 625px;
+    left: 25px;
+}
+
+#anecdote_3 {
+    top: 2135px;
+    right: 25px;
+    width: 800px;
+}
+
+#anecdote_4 {
+    top: 2890px;
+    left: 25px;
+    width: 550px;
+}

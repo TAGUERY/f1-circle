@@ -1,4 +1,4 @@
-
+/*
 
 
 const svg = d3.select("#section1");
@@ -7,7 +7,7 @@ const circle = svg.select("#animatedCircle");
 const image = document.querySelector('#f1LogoHerroBanner');
 const div = document.querySelector('#fixedArea');
 const divScroll = document.querySelector('#scrollArea');
-
+const svgElement = document.querySelector('#section1');
 
 
 const pathLength = path.node().getTotalLength();
@@ -105,24 +105,23 @@ function updateImage() {
 
 function updateStyleHerroBanner() {
     const scrollPosition = window.pageYOffset;
-    const stopScrollPosition = document.documentElement.scrollHeight * 0.34; // Change le style à 50% de la hauteur totale de la page
+    const stopScrollPosition = document.documentElement.scrollHeight * 0.34;
 
+    div.style.transition = 'top 0.3s ease-out';
 
     if (scrollPosition >= stopScrollPosition) {
         // Changez le style de l'élément ici
         div.style.backgroundColor = 'white';
-        //svg.setAttribute('viewBox', '0 0 1920 4000');
+        svgElement.setAttribute('viewBox', '0 0 1920 4000');
         div.style.position = 'absolute';
         image.style.display = 'none';
         div.style.top = '1300px';
-        //div.style.height = '4500px';
     } else {
         div.style.backgroundColor = 'rebeccapurple';
         div.style.position = 'fixed';
         image.style.display = 'block';
         div.style.top = '0';
-        //div.style.height = '100vh';
-
+        svgElement.setAttribute('viewBox', '0 0 1920 975');
     }
 }
 
@@ -140,21 +139,17 @@ updateImage();
 // Mettre à jour la position du cercle lors du défilement
 window.addEventListener('scroll', updateCircleAndImage);
 
-/*
+*/
 
 
-// Import GSAP and ScrollTrigger
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Get elements
-const image = document.querySelector('#f1LogoHerroBanner');
-const div = document.querySelector('#fixedArea');
+/*let img = document.createElement('img');
+img.src = 'https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg';
+img.style.position = 'absolute';
+img.style.transform = 'translate(-50%, -50%)'; // déplace l'image de 50% de sa largeur et de sa hauteur vers la gauche et vers le haut
+img.id = 'centerImage'; // ID de l'image*/
 
 // Create a timeline
-const tl = gsap.timeline({
+/*const tl = gsap.timeline({
     scrollTrigger: {
         trigger: div,
         start: "top top", // when the top of the trigger hits the top of the viewport
@@ -164,8 +159,89 @@ const tl = gsap.timeline({
 });
 
 // Add animations to the timeline
-tl.to(image, { opacity: 1 })
-    .to(div, { backgroundColor: 'white', position: 'absolute', top: '1300px' }, "<") // "<" means start at the same time as the previous animation
-    .to(image, { display: 'none' }, "<");
-
+tl.to(circle.node(), {
+    attr: {
+        cx: () => {
+            const scrollPosition = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollSpeedFactor = 0.7;
+            const scrollFraction = (scrollPosition * scrollSpeedFactor) / maxScroll;
+            const pathPoint = scrollFraction * pathLength;
+            return path.node().getPointAtLength(pathPoint).x;
+        },
+        cy: () => {
+            const scrollPosition = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollSpeedFactor = 0.7;
+            const scrollFraction = (scrollPosition * scrollSpeedFactor) / maxScroll;
+            const pathPoint = scrollFraction * pathLength;
+            return path.node().getPointAtLength(pathPoint).y;
+        }
+    }
+})
+    .to(image, { opacity: 1 })
+    .to(div, { backgroundColor: 'white', position: 'absolute', top: '1300px' })
+    .to(image, { display: 'none' })
+    .to(svgElement, { attr: { viewBox: '0 0 1920 4000' } }, "<")
+    .to(div, { backgroundColor: 'rebeccapurple', position: 'fixed', top: '0' }, "<")
+    .to(image, { display: 'block' }, "<")
+    .to(svgElement, { attr: { viewBox: '0 0 1920 975' } }, "<");
     */
+
+
+/*
+gsap.to(circle.node(), {
+scrollTrigger: {
+    trigger: div,
+    start: "top top",
+    end: "bottom+=1000 bottom",
+    scrub: true
+},// Animation duration in seconds
+ease: "power1.inOut", // Easing function
+motionPath: {
+    path: pathNode,
+    align: path.node(),
+    autoRotate: true,
+    start: 0,
+    end: 1,
+    alignOrigin: [0.5, 0.5]
+}
+});
+
+// Change the height of the div
+gsap.to(div, {
+scrollTrigger: {
+    trigger: div,
+    start: "top top", // Start the animation at the top of the div
+    end: "top+=45%", // Change the position at 15% of the total scroll
+    scrub: true,
+    onLeave: (self) => {
+        gsap.set(div, { position: 'relative' }); // Change the position to relative when the scrollTrigger leaves the start point
+    },
+    onEnterBack: (self) => {
+        gsap.set(div, { position: 'fixed' }); // Change the position back to fixed when the scrollTrigger enters the start point backwards
+    }
+},
+height: "4000px", // Change the height to 4000px
+ease: "power1.inOut"
+});
+
+*/
+// Set the scroll speed factor
+let scrollSpeed = 0.5;
+
+// Add an event listener for the 'wheel' event
+document.addEventListener('wheel', function (event) {
+    // Prevent default scrolling behavior
+    event.preventDefault();
+
+    // Calculate the new scroll position
+    let delta = event.deltaY;
+    let scrollPosition = window.scrollY + (delta * scrollSpeed);
+
+    // Set the new scroll position
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+}, { passive: false });
