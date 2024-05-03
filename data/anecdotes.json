@@ -33,8 +33,8 @@
             "reponse": "is the time for a Formula 1 car to go from 1 to 300 km/h"
         },
         {
-            "chiffre": "12 millions dollars",
-            "reponse": "is the price of a Formula 1, of which 10 million is for the engine only"
+            "chiffre": "12 millions",
+            "reponse": "dollars is the price of a Formula 1, of which 10 million is for the engine only"
         }
     ]
 }

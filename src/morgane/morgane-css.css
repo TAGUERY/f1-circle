@@ -126,11 +126,40 @@ body {
   fill: white;
   font-size: 1rem;
   text-anchor: middle;
+  font-family: "formula-regular";
 }
 
 .chiffre {
   /* Styles pour les chiffres */
-  fill: white;
+  fill: black;
+  /* Couleur de remplissage */
+  stroke: white;
+  /* Couleur du contour */
+  stroke-width: 3px;
+  /* Épaisseur du contour */
   font-size: 3rem;
   text-anchor: middle;
+  font-family: "formula", sans-serif;
+}
+
+@font-face {
+  font-family: "formula";
+  src: url("font/Formula1-Bold_web.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "formula-regular";
+  src: url("font/Formula1-Regular-1.ttf") format("truetype");
+}
+
+.circle {
+  opacity: 0;
+  /* Les cercles sont initialement invisibles */
+  transition: opacity 1.5s ease;
+  /* Transition pour rendre les cercles visibles en douceur */
+}
+
+.circle.appear {
+  opacity: 1;
+  /* Les cercles deviennent visibles lorsqu'ils apparaissent */
 }
