@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 function firstPart() {
   // Register ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);
-
   // Get the path and the car
   const path = document.querySelector("#pathCircuitHerroBanner");
   const car = document.querySelector("#f1Car");
@@ -30,6 +29,7 @@ document.addEventListener('wheel', function (event) {
     });
 }, { passive: false });
 */
+
   const lastPoint = 0;
 
   function updatePosition() {
@@ -84,9 +84,9 @@ document.addEventListener('wheel', function (event) {
     scrollTrigger: {
       trigger: "#fixedArea",
       start: "top top", // Dès le début de l'élément de déclenchement
-      end: "1200px top", // Jusqu'à 1500 pixels de défilement
+      end: "+=8000 top", // Déclencher lorsque le haut de l'élément de déclenchement atteint le haut de la fenêtre plus 1200 pixels
       pin: true, // Fixe l'élément en place
-      scrub: 10000, // Activer le mode "scrubbing" pour une animation en douceur
+      scrub: 3000, // Activer le mode "scrubbing" pour une animation en douceur
       onUpdate: (self) => {
         // Mettre à jour l'opacité de l'image en fonction du progrès de la timeline
         gsap.to("#f1LogoHerroBanner", {

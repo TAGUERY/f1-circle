@@ -1,14 +1,20 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { createPilotesCircle } from "./pilotes-section.js";
 import { createCircuitsCircle } from "./circuits-section.js";
 import { createFourCircle } from "./circles-section.js";
+import { firstPart } from "./race-section.js";
 import {
   createGraphicsPilotes,
   createWorldMap,
   createPodium,
 } from "./graphics-section.js";
 import { miniSpeedGame } from "./minigame-section.js";
+
 const togglePilotsCircuitsBtn = document.querySelector(".switch__input");
 const bgPilotsCircuits = document.querySelector("#bg-pilotesCircuits");
+
+firstPart();
 
 function createPilotesCircuitCircle() {
   if (togglePilotsCircuitsBtn.checked) {
@@ -43,7 +49,6 @@ gsap.defaults({ ease: "none", duration: 0.5 });
 const timeline = gsap.timeline();
 timeline
   .addLabel("start")
-  .to("#bg-circuits", { yPercent: -100 })
   .from("#tableauAge", { yPercent: 100 }, "<")
   .addLabel("tableauAge_end")
   .to("#tableauAge", { xPercent: -100 })
@@ -53,6 +58,7 @@ timeline
   .to("#orange", { xPercent: -100 }, "<")
   .addLabel("bleu_end")
   .from("#gray", { yPercent: 100 })
+  .to("#bleu", { yPercent: -100 }, "<")
   .addLabel("gray_end")
   .from("#pink", { yPercent: 100 })
   .addLabel("pink_end");

@@ -712,7 +712,7 @@ body:has(.switch__input:checked) {
   align-items: end;
   height: 200px;
   width: 100%;
-  background-color: rgb(164, 159, 159);
+  background-color: silver;
   padding: 0 30px;
   border-radius: 20px 5px;
 }

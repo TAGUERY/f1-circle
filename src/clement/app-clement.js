@@ -141,7 +141,6 @@ window.addEventListener('scroll', updateCircleAndImage);
 
 */
 
-
 /*let img = document.createElement('img');
 img.src = 'https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg';
 img.style.position = 'absolute';
@@ -188,7 +187,6 @@ tl.to(circle.node(), {
     .to(svgElement, { attr: { viewBox: '0 0 1920 975' } }, "<");
     */
 
-
 /*
 gsap.to(circle.node(), {
 scrollTrigger: {
@@ -231,17 +229,21 @@ ease: "power1.inOut"
 let scrollSpeed = 0.5;
 
 // Add an event listener for the 'wheel' event
-document.addEventListener('wheel', function (event) {
+document.addEventListener(
+  "wheel",
+  function (event) {
     // Prevent default scrolling behavior
     event.preventDefault();
 
     // Calculate the new scroll position
     let delta = event.deltaY;
-    let scrollPosition = window.scrollY + (delta * scrollSpeed);
+    let scrollPosition = window.scrollY + delta * scrollSpeed;
 
     // Set the new scroll position
     window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
+      top: scrollPosition,
+      behavior: "smooth",
     });
-}, { passive: false });
+  },
+  { passive: false }
+);
