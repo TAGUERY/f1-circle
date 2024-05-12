@@ -24,6 +24,17 @@ body {
   font-size: 100px;
 }
 
+#middleZone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: red;
+  z-index: 1000;
+}
+
 #bg-cercles {
   background-color: #1b1b1b;
   height: 100vh;
