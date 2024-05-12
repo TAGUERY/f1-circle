@@ -64,7 +64,7 @@ function createCircuitsCircle() {
   let circuitInfoZone = svg
     .append("g")
     .style("fill", "#f2f2f2")
-    .style("font-size", "1.2rem")
+    .style("font-size", "1em")
     .style("text-anchor", "left") // Aligner horizontalement
     .style("dominant-baseline", "middle"); // Aligner verticalement
 

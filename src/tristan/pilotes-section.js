@@ -10,7 +10,7 @@ function createPilotesCircle() {
 
   // Créer un SVG
   let svg = d3
-    .select("#bg-pilotes")
+    .select("#bg-pilotesCircuits")
     .append("svg")
     .attr("width", width)
     .attr("height", height);
