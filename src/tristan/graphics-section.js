@@ -4,20 +4,19 @@ let widthWin = window.innerWidth;
 let heightWin = window.innerHeight;
 
 function createGraphicsPilotes() {
-  // Définir la largeur et la hauteur du graphique
-  const padding = { top: 50, right: 50, bottom: 50, left: 100 };
-  const width = widthWin / 1.3;
-  const height = heightWin / 1.5 - padding.top - padding.bottom;
+  const width = widthWin / 1.5;
+  const height = heightWin / 2;
 
   // Créer des tranches d'âge
   const tranchesAge = [
-    { label: "18 - 24", min: 0, max: 24 },
-    { label: "25 - 29", min: 25, max: 29 },
-    { label: "30 - 34", min: 30, max: 34 },
-    { label: "35+", min: 35, max: Infinity },
+    { label: "18 à 24 ans", min: 0, max: 24 },
+    { label: "25 à 29 ans", min: 25, max: 29 },
+    { label: "30 à 34 ans", min: 30, max: 34 },
+    { label: "35ans +", min: 35, max: Infinity },
   ];
 
   // Compter le nombre de pilotes dans chaque tranche d'âge
+  const totalPilotes = data.pilotes.length;
   const counts = tranchesAge.map((tranche) => {
     const count = data.pilotes.filter((pilote) => {
       const age =
@@ -25,102 +24,139 @@ function createGraphicsPilotes() {
         new Date(pilote.date_de_naissance).getFullYear();
       return age >= tranche.min && age <= tranche.max;
     }).length;
-    return { label: tranche.label, count: count };
+    return {
+      label: tranche.label,
+      count: count,
+      percentage: (count / totalPilotes) * 100,
+    };
   });
 
   // Créer l'échelle X
   const x = d3
     .scaleLinear()
     .domain([0, d3.max(counts, (d) => d.count)])
-    .range([0, width - padding.left - padding.right]);
+    .range([0, width]);
 
   // Créer l'échelle Y avec un remplissage plus grand
   const y = d3
     .scaleBand()
     .domain(counts.map((d) => d.label))
-    .range([height - padding.top - padding.bottom, 0])
-    .padding(0.5); // Ajustez la valeur de remplissage ici pour augmenter l'espace entre les tranches d'âge
+    .range([height, 0])
+    .padding(0.3); // Ajustez la valeur de remplissage ici pour augmenter l'espace entre les tranches d'âge
 
   // Créer l'axe X
-  const xAxis = d3.axisBottom(x);
+  const xAxis = d3.axisBottom(x).tickSize(0); // Supprimer les ticks de l'axe X
 
   // Créer l'axe Y
   const yAxis = d3.axisLeft(y);
 
-  // Créer le SVG
+  // Calculer le décalage en pixels
+  const xOffset = 0.1 * widthWin;
+  const yOffset = 0.2 * heightWin;
+
+  // Créer le SVG avec la transformation pour placer le graphe en bas
   const svg = d3
-    .select("#red")
+    .select("#tableauAge")
     .append("svg")
     .attr("width", widthWin)
     .attr("height", heightWin)
     .append("g")
-    .attr("transform", "translate(" + padding.left + "," + padding.top + ")");
+    .attr("transform", "translate(" + xOffset + ", " + yOffset + ")");
 
   // Ajouter un rectangle de fond gris
   svg
     .append("rect")
-    .attr("width", width - padding.left - padding.right)
-    .attr("height", height - padding.top - padding.bottom)
+    .attr("width", width)
+    .attr("height", height)
     .attr("fill", "transparent");
 
-  // Ajouter les barres avec les couleurs basées sur l'échelle de couleur
+  // Créer le motif de remplissage dans le <defs>
+  svg
+    .append("defs")
+    .append("pattern")
+    .attr("id", "imagePattern")
+    .attr("patternUnits", "userSpaceOnUse")
+    .attr("width", y.bandwidth()) // Utiliser la largeur de la case
+    .attr("height", y.bandwidth()) // Utiliser la hauteur de la case
+    .append("image")
+    .attr("xlink:href", "../../assets/img/image_good.png")
+    .attr("width", y.bandwidth()) // Utiliser la largeur de la case
+    .attr("height", y.bandwidth()) // Utiliser la hauteur de la case
+    .attr("x", 0) // Définir la position x de l'image à 0
+    .attr("y", 0); // Définir la position y de l'image à 0
+
+  // Utilisez le motif de remplissage pour vos barres
   svg
     .selectAll(".bar")
     .data(counts)
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("x", 0)
+    .attr("x", 30) // Translate de 30 à droite
     .attr("y", (d) => y(d.label))
     .attr("width", (d) => x(d.count))
     .attr("height", y.bandwidth())
-    .attr("fill", "red")
-    .attr("stroke", "white")
-    .attr("stroke-width", 3);
+    .attr("fill", (d, i) => {
+      if (i % 2 === 0) {
+        return "url(#imagePattern)";
+      } else {
+        const gradient = svg
+          .append("defs")
+          .append("linearGradient")
+          .attr("id", "gradient" + i)
+          .attr("x1", "0%")
+          .attr("y1", "0%")
+          .attr("x2", "100%")
+          .attr("y2", "0%");
+        gradient.append("stop").attr("offset", "0%").attr("stop-color", "red");
+        gradient
+          .append("stop")
+          .attr("offset", "100%")
+          .attr("stop-color", "darkred");
+        return "url(#gradient" + i + ")";
+      }
+    })
+    .attr("rx", 10) // Arrondir les angles de 10px
+    .attr("ry", 10); // Arrondir les angles de 10px
 
-  // Ajouter des étiquettes de couleur
+  // Ajouter les pourcentages à la fin de chaque barre
   svg
-    .selectAll(".label")
+    .selectAll(".percentage")
     .data(counts)
     .enter()
     .append("text")
-    .attr("class", "label")
-    .attr("x", (d) => x(d.count))
+    .attr("class", "percentage")
+    .attr("x", (d) => x(d.count) + 5) // Décaler le texte à droite de la barre
     .attr("y", (d) => y(d.label) + y.bandwidth() / 2)
-    .attr("dx", 5)
-    .attr("dy", ".35em")
-    .attr("fill", "red")
-    .text((d) => d.count);
-
-  // Ajouter l'axe X
-  svg
-    .append("g")
-    .attr("stroke", "orange")
-    .attr("transform", "translate(0," + (height - padding.bottom) + ")")
-    .call(xAxis);
+    .attr("dy", "0.35em")
+    .style("fill", "white")
+    .style("font-size", "3rem")
+    .attr("transform", "translate(-30, -40)") // Modifier le translate ici
+    .text((d) => Math.round(d.percentage) + "%");
 
   // Ajouter l'axe Y
   svg
     .append("g")
-    .attr("transform", "translate(" + -padding.right + ",0)")
-    .attr("stroke", "orange")
-    .call(yAxis);
+    .attr("stroke", "white")
+    .call(yAxis)
+    .selectAll("text") // Sélectionnez tous les éléments texte
+    .style("font-size", "20px") // Modifiez la taille de la police
+    .attr("fill", "white");
 
+  // Ajouter le titre en haut
   const text = svg
     .append("text")
     .text("Grid by age")
-    .attr("class", "title world")
-    //text anchor on the right
+    .attr("class", "title")
     .attr("text-anchor", "end")
     .attr("fill", "red")
     .style("stroke", "white")
-    .style("stroke-width", "5px") // Increase the stroke width here
-    .attr("x", widthWin)
-    .attr("y", +100)
+    .style("stroke-width", "3.5px")
+    .attr("x", "75%")
+    .attr("y", "-5%") // Positionner le titre en haut
     .style("position", "absolute");
 }
 
-// Séparation
 function createWorldMap() {
   const width = window.innerWidth;
   const height = window.innerHeight;
@@ -166,7 +202,7 @@ function createWorldMap() {
         // Vérifier si le pays a des pilotes
         const countryName = d.properties.name;
         if (countryName && pilotesParPays[countryName]) {
-          return "orange"; // Couleur différente pour les pays avec des pilotes
+          return "lightcoral"; // Couleur différente pour les pays avec des pilotes
         } else {
           return "lightgray"; // Couleur par défaut pour les autres pays
         }
@@ -222,7 +258,7 @@ function createWorldMap() {
       .attr("class", "title world")
       .attr("fill", "red")
       .style("stroke", "white")
-      .style("stroke-width", "5px") // Increase the stroke width here
+      .style("stroke-width", "3.5px")
       .attr("x", 100)
       .attr("y", height - 100)
       .style("position", "absolute");

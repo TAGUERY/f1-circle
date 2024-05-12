@@ -39,12 +39,10 @@ gsap.defaults({ ease: "none", duration: 0.5 });
 const timeline = gsap.timeline();
 timeline
   .addLabel("start")
-  .from("#bg-circuits", { yPercent: 100 })
-  .addLabel("bg-circuits_end")
   .to("#bg-circuits", { yPercent: -100 })
-  .from("#red", { yPercent: 100 }, "<")
-  .addLabel("red_end")
-  .to("#red", { xPercent: -100 })
+  .from("#tableauAge", { yPercent: 100 }, "<")
+  .addLabel("tableauAge_end")
+  .to("#tableauAge", { xPercent: -100 })
   .from("#orange", { xPercent: 100 }, "<")
   .addLabel("orange_end")
   .from("#bleu", { xPercent: 100 })
@@ -69,3 +67,18 @@ ScrollTrigger.create({
   },
   pin: true,
 });
+
+// Sélectionnez l'élément conteneur
+const f1Container = document.querySelector("#f1Emoji");
+
+// Nombre d'emojis F1 à afficher pour couvrir toute la largeur de la page
+const numberOfCars = Math.floor(window.innerWidth / 95); // Taille approximative d'une voiture
+
+// Créez une chaîne contenant l'emoji F1
+const f1Emoji = "🏎️";
+
+// Créez une chaîne contenant plusieurs emojis F1
+const f1EmojiString = f1Emoji.repeat(numberOfCars);
+
+// Mettez cette chaîne dans le contenu de l'élément conteneur
+f1Container.textContent = f1EmojiString;

@@ -61,17 +61,17 @@ function createPilotesCircle() {
 
   let piloteNameZone = svg
     .append("text")
+    .attr("class", "circuitPiloteName")
     .attr("x", width / 2)
     .attr("y", height / 2 - radius * 0.15)
-    .style("font-size", "2rem")
     .style("fill", "#f2f2f2")
     .style("text-anchor", "left") // Aligner horizontalement
     .style("dominant-baseline", "middle"); // Aligner verticalement
 
   let piloteInfoZone = svg
     .append("g")
+    .attr("class", "circuitPiloteInfoZone")
     .style("fill", "#f2f2f2")
-    .style("font-size", "1.2rem")
     .style("text-anchor", "left") // Aligner horizontalement
     .style("dominant-baseline", "middle"); // Aligner verticalement
 
@@ -123,7 +123,8 @@ function createPilotesCircle() {
 
       piloteInfoZone
         .append("text")
-        .style("fill", "red") // Mettre le texte en couleur rouge
+        .style("fill", "red")
+        .attr("class", "circuitPiloteNameNumber")
         .attr("x", width / 2)
         .attr("y", height / 2 - radius * 0.05) // déplacez le texte vers le bas de 20 unités
         .text("Number : " + url.numero_pilote);

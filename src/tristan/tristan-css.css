@@ -81,14 +81,7 @@ body {
   position: absolute;
 }
 
-#pink {
-  background-color: red;
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-}
-
-#red {
+#tableauAge {
   background: linear-gradient(to bottom right, #1b1b1b, black);
   height: 100vh;
   width: 100vw;
@@ -252,71 +245,6 @@ div.affichage {
   border-radius: 12px;
 }
 
-#finishDamier {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 60%;
-  width: 100%;
-}
-#finishDamier img {
-  height: 130%;
-}
-
-#finishText {
-  width: 100%;
-  height: 60%;
-  margin-top: -12%;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  color: whitesmoke;
-}
-
-#finishText a {
-  text-decoration: none;
-  color: whitesmoke;
-  padding: 30px;
-}
-.theEnd {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  background-color: rgb(231, 150, 150);
-  border-radius: 12px;
-}
-
-#finishText h1 {
-  font-size: 130px;
-}
-
-#finishText .theEnd:hover {
-  background-color: red;
-  color: white;
-}
-
-.imgEnd {
-  width: 100%;
-  height: 100px;
-  border: white 3px solid;
-  border-top: none;
-  background-color: whitesmoke;
-  border-radius: 0px 0px 12px 12px;
-  background-image: url(../../assets/svg/finishLine.svg);
-  background-size: cover;
-}
-
-.title {
-  font-size: 150px;
-  font-family: "formula", sans-serif;
-}
-
 /* .world {
   border: 5px solid red;
 } */
@@ -476,4 +404,177 @@ body:has(.switch__input:checked) {
   position: absolute;
   width: 1px;
   height: 1px;
+}
+
+.title {
+  font-size: 7.5rem;
+  font-family: "formula", sans-serif;
+}
+
+.circuitPiloteInfoZone {
+  font-size: 1.3rem;
+}
+
+.circuitPiloteName {
+  font-size: 2rem;
+}
+.circuitName {
+  font-size: 1rem;
+}
+
+@media (max-width: 1350px) {
+  .title {
+    font-size: 5rem;
+    border: 5px solid red;
+  }
+  .circuitPiloteInfoZone {
+    font-size: 0.9rem;
+  }
+  .circuitPiloteName {
+    font-size: 1.7rem;
+  }
+  .circuitPiloteNameNumber {
+    font-size: 0.8rem;
+  }
+}
+
+.reponse {
+  /* Styles pour les réponses */
+  fill: white;
+  font-size: 1rem;
+  text-anchor: middle;
+  font-family: "formula-regular";
+}
+
+.chiffre {
+  /* Styles pour les chiffres */
+  fill: black;
+  /* Couleur de remplissage */
+  stroke: white;
+  /* Couleur du contour */
+  stroke-width: 2px;
+  /* Épaisseur du contour */
+  font-size: 3rem;
+  text-anchor: middle;
+  font-family: "formula", sans-serif;
+}
+
+@font-face {
+  font-family: "formula";
+  src: url("font/Formula1-Bold_web.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "formula-regular";
+  src: url("font/Formula1-Regular-1.ttf") format("truetype");
+}
+
+.circle {
+  opacity: 0;
+  /* Les cercles sont initialement invisibles */
+  transition: opacity 1.5s ease;
+  /* Transition pour rendre les cercles visibles en douceur */
+}
+
+.circle.appear {
+  opacity: 1;
+  /* Les cercles deviennent visibles lorsqu'ils apparaissent */
+}
+
+.percentage {
+  font-family: "formula", sans-serif;
+}
+
+@media (max-height: 900px) {
+  .title {
+    font-size: 5rem;
+    border: 5px solid red;
+  }
+  .circuitPiloteInfoZone {
+    font-size: 0.9rem;
+  }
+  .circuitPiloteName {
+    font-size: 1.7rem;
+  }
+  .circuitPiloteNameNumber {
+    font-size: 0.9rem;
+  }
+  .chiffre {
+    font-size: 2rem;
+  }
+}
+
+#pink {
+  background: linear-gradient(to bottom, red, darkred);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#f1Emoji {
+  font-size: 6rem;
+}
+
+#finishDamier {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+  top: -10%;
+}
+
+#finishDamier img {
+  height: 100%;
+}
+
+#finishText {
+  width: 100%;
+  height: 60%;
+  margin-top: -9%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+#finishText a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 30px;
+}
+.theEnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  background-color: rgb(231, 150, 150);
+  border-radius: 12px;
+}
+
+#finishText h1 {
+  font-size: 130px;
+}
+
+#finishText .theEnd:hover {
+  background-color: red;
+  color: white;
+}
+
+.imgEnd {
+  width: 100%;
+  height: 100px;
+  border: white 3px solid;
+  border-top: none;
+  background-color: whitesmoke;
+  border-radius: 0px 0px 12px 12px;
+  background-image: url(../../assets/svg/finishLine.svg);
+  background-size: cover;
 }

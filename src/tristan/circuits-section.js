@@ -54,17 +54,17 @@ function createCircuitsCircle() {
 
   let circuitNameZone = svg
     .append("text")
+    .attr("class", "circuitPiloteName")
     .attr("x", width / 2)
     .attr("y", height / 2 - radius * 0.15)
-    .style("font-size", "2rem")
     .style("fill", "#f2f2f2")
     .style("text-anchor", "left") // Aligner horizontalement
     .style("dominant-baseline", "middle"); // Aligner verticalement
 
   let circuitInfoZone = svg
     .append("g")
+    .attr("class", "circuitPiloteInfoZone")
     .style("fill", "#f2f2f2")
-    .style("font-size", "1em")
     .style("text-anchor", "left") // Aligner horizontalement
     .style("dominant-baseline", "middle"); // Aligner verticalement
 
@@ -114,6 +114,7 @@ function createCircuitsCircle() {
 
       circuitInfoZone
         .append("text")
+        .attr("class", "circuitPiloteNameNumber")
         .style("fill", "red") // Mettre le texte en couleur rouge
         .attr("x", width / 2)
         .attr("y", height / 2 - radius * 0.05) // déplacez le texte vers le bas de 20 unités
