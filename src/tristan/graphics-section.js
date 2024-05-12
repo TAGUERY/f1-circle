@@ -227,11 +227,11 @@ function createWorldMap() {
             .style("z-index", "99999")
             .html(
               "<h3> " +
-              countryName +
-              "<br/></h3>" +
-              pilotesParPays[countryName]
-                .map((pilote) => pilote.nom)
-                .join(" & ")
+                countryName +
+                "<br/></h3>" +
+                pilotesParPays[countryName]
+                  .map((pilote) => pilote.nom)
+                  .join(" & ")
             );
         }
       })
@@ -265,83 +265,29 @@ function createWorldMap() {
   });
 }
 
-export { createGraphicsPilotes, createWorldMap };
-
 // Création d'un podium
 function createPodium() {
-  // Sélection de l'élément div
-  var div = document.getElementById('bleu');
+  // stock les 3 pilotes avec les plus de championnats du monde
+  const podium = data.pilotes
+    .sort((a, b) => b.nombre_de_coupes_du_monde - a.nombre_de_coupes_du_monde)
+    .slice(0, 3);
 
-  // Création des conteneurs pour chaque colonne
-  var firstPlaceContainer = document.createElement('div');
-  var secondPlaceContainer = document.createElement('div');
-  var thirdPlaceContainer = document.createElement('div');
+  console.log(podium);
 
-  // Ajout des classes pour le style
-  firstPlaceContainer.className = 'placeContainer';
-  secondPlaceContainer.className = 'placeContainer';
-  thirdPlaceContainer.className = 'placeContainer';
+  const documentPodium = [];
+  documentPodium.push(document.getElementById("podium1"));
+  documentPodium.push(document.getElementById("podium2"));
+  documentPodium.push(document.getElementById("podium3"));
 
-  // Création des éléments du podium
-  var firstPlace = document.createElement('div');
-  var secondPlace = document.createElement('div');
-  var thirdPlace = document.createElement('div');
-
-  // Ajout des classes pour le style
-  firstPlace.className = 'firstPlace';
-  secondPlace.className = 'secondPlace';
-  thirdPlace.className = 'thirdPlace';
-
-  // Ajout du texte
-  firstPlace.innerText = '7X';
-  secondPlace.innerText = '3X';
-  thirdPlace.innerText = '2X';
-
-  // Création des éléments de texte pour le haut de chaque colonne
-  var firstPlaceText = document.createElement('div');
-  var secondPlaceText = document.createElement('div');
-  var thirdPlaceText = document.createElement('div');
-
-  // Ajout des classes pour le style
-  firstPlaceText.className = 'topText';
-  secondPlaceText.className = 'topText';
-  thirdPlaceText.className = 'topText';
-
-  // Ajout du texte
-  firstPlaceText.innerText = 'Lewis Hamilton';
-  secondPlaceText.innerText = 'Max Verstappen';
-  thirdPlaceText.innerText = 'Fernando Alonso';
-
-  // Création des éléments d'image pour le haut de chaque colonne
-  var firstPlaceImage = document.createElement('img');
-  var secondPlaceImage = document.createElement('img');
-  var thirdPlaceImage = document.createElement('img');
-
-  // Ajout des sources d'image
-  firstPlaceImage.src = '/data/img/pilotes/hamilton.png';
-  secondPlaceImage.src = '/data/img/pilotes/verstappen.png';
-  thirdPlaceImage.src = '/data/img/pilotes/alonso.png';
-
-  firstPlaceImage.className = 'podiumImage';
-  secondPlaceImage.className = 'podiumImage';
-  thirdPlaceImage.className = 'podiumImage';
-
-  // Ajout des éléments d'image, de texte et des colonnes aux conteneurs
-  firstPlaceContainer.appendChild(firstPlaceImage);
-  firstPlaceContainer.appendChild(firstPlaceText);
-  firstPlaceContainer.appendChild(firstPlace);
-  secondPlaceContainer.appendChild(secondPlaceImage);
-  secondPlaceContainer.appendChild(secondPlaceText);
-  secondPlaceContainer.appendChild(secondPlace);
-  thirdPlaceContainer.appendChild(thirdPlaceImage);
-  thirdPlaceContainer.appendChild(thirdPlaceText);
-  thirdPlaceContainer.appendChild(thirdPlace);
-
-  // Ajout des conteneurs au div
-  div.appendChild(secondPlaceContainer);
-  div.appendChild(firstPlaceContainer);
-  div.appendChild(thirdPlaceContainer);
+  documentPodium.forEach((element, i) => {
+    element.querySelector(
+      ".piloteName"
+    ).textContent = `${podium[i].prenom} ${podium[i].nom}`;
+    element.querySelector(".piloteImage").src = podium[i].photo;
+    element.querySelector(
+      ".nbTitles"
+    ).textContent = `${podium[i].nombre_de_coupes_du_monde}x`;
+  });
 }
 
-// Appel de la fonction pour créer le podium
-createPodium();
+export { createGraphicsPilotes, createWorldMap, createPodium };

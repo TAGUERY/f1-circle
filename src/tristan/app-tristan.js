@@ -1,7 +1,11 @@
 import { createPilotesCircle } from "./pilotes-section.js";
 import { createCircuitsCircle } from "./circuits-section.js";
 import { createFourCircle } from "./circles-section.js";
-import { createGraphicsPilotes, createWorldMap } from "./graphics-section.js";
+import {
+  createGraphicsPilotes,
+  createWorldMap,
+  createPodium,
+} from "./graphics-section.js";
 import { miniSpeedGame } from "./minigame-section.js";
 const togglePilotsCircuitsBtn = document.querySelector(".switch__input");
 const bgPilotsCircuits = document.querySelector("#bg-pilotesCircuits");
@@ -9,10 +13,8 @@ const bgPilotsCircuits = document.querySelector("#bg-pilotesCircuits");
 function createPilotesCircuitCircle() {
   if (togglePilotsCircuitsBtn.checked) {
     createPilotesCircle();
-    console.log("createPilotesCircle");
   } else {
     createCircuitsCircle();
-    console.log("createCircuitsCircle");
   }
 }
 
@@ -32,6 +34,8 @@ createGraphicsPilotes();
 createWorldMap();
 
 miniSpeedGame();
+
+createPodium();
 
 gsap.registerPlugin(ScrollTrigger);
 
