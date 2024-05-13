@@ -109,22 +109,21 @@ body {
   justify-content: space-between;
   align-items: center;
   /* Aligner les éléments au centre verticalement */
-  width: 70vw;
-  height: 300px;
+  width: 50vw;
+  height: 200px;
   background-color: black;
-  border-radius: 50px;
+  border-radius: 30px;
   border: 5px solid whitesmoke;
   margin: 20px auto;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 20px 5%;
 }
 
 .light {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   background-color: gray;
-  border-radius: 50%;
-  margin: 20px 10px;
+  border-radius: 100%;
+  padding: 20px 20px;
 }
 
 #gray h1 {
@@ -134,6 +133,7 @@ body {
 
 #btnDiv {
   display: flex;
+  height: 100px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -152,8 +152,7 @@ body {
   color: whitesmoke;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin-bottom: 70px;
-  margin-top: 30px;
+  margin: auto;
 }
 
 #gray button:hover {
@@ -506,7 +505,6 @@ body:has(.switch__input:checked) {
 @media (max-width: 1350px) {
   .title {
     font-size: 5rem;
-    border: 5px solid red;
   }
   .circuitPiloteInfoZone {
     font-size: 0.9rem;
@@ -569,7 +567,6 @@ body:has(.switch__input:checked) {
 @media (max-height: 900px) {
   .title {
     font-size: 5rem;
-    border: 5px solid red;
   }
   .circuitPiloteInfoZone {
     font-size: 0.9rem;
@@ -751,4 +748,21 @@ body:has(.switch__input:checked) {
   text-align: center;
   width: 100%;
   color: whitesmoke;
+}
+
+#theGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 80vw;
+  padding: 10px;
+  margin: auto;
+}
+
+#compare {
+  width: 95vw;
+  margin: auto;
+  margin-bottom: 10px;
 }

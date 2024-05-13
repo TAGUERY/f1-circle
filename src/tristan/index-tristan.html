@@ -20,7 +20,7 @@
           src: url("../tristan/font/Formula1-Bold_web.ttf") format("truetype");
         }
 
-        body {
+        container-f1-scroll {
           margin: 0;
           height: 4000px;
           background-color: #1b1b1b;
@@ -90,7 +90,7 @@
       </style>
       <div
         id="fixedArea"
-        style="height: 4000px; width: 100%; background-color: #000000"
+        style="height: 4200px; width: 100%; background-color: #1b1b1b"
       >
         <div id="anecdote_1" class="anecdote">
           <h1 class="firstTitleAnecdote">
@@ -1215,7 +1215,6 @@
         src="../../assets/svg/finishLine.svg"
         alt="SVG Image"
       />
-
       <div id="container">
         <div id="bg-pilotes">
           <div id="testBtn">
@@ -1305,36 +1304,39 @@
           <h1 class="title">Active worldchampions</h1>
         </div>
         <div id="gray">
-          <h1>Better reflexes ?</h1>
-          <div id="lights">
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-          </div>
-          <div id="btnDiv">
-            <button id="startStopButton">Start</button>
-          </div>
+          <div id="theGame">
+            <h1 class="title">Better reflexes ?</h1>
+            <div id="lights">
+              <div class="light"></div>
+              <div class="light"></div>
+              <div class="light"></div>
+              <div class="light"></div>
+              <div class="light"></div>
+            </div>
+            <div id="btnDiv">
+              <button id="startStopButton">Start</button>
+            </div>
 
-          <div class="infoZone">
-            <div class="left">
-              <h2>Last times :</h2>
-              <div class="scores"></div>
-            </div>
-            <div class="center">
-              <h2>Chrono :</h2>
-              <div class="affichage">
-                <h1 id="runningTime">000 ms</h1>
+            <div class="infoZone">
+              <div class="left">
+                <h2>Last times :</h2>
+                <div class="scores"></div>
               </div>
-            </div>
-            <div class="right">
-              <h2>Best time :</h2>
-              <div class="affichage">
-                <span class="bestTime">--- ms</span>
+              <div class="center">
+                <h2>Chrono :</h2>
+                <div class="affichage">
+                  <h1 id="runningTime">000 ms</h1>
+                </div>
+              </div>
+              <div class="right">
+                <h2>Best time :</h2>
+                <div class="affichage">
+                  <span class="bestTime">--- ms</span>
+                </div>
               </div>
             </div>
           </div>
+          <div id="compare"></div>
         </div>
         <div id="pink">
           <div id="finishDamier">

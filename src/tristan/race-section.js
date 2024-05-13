@@ -53,8 +53,6 @@ document.addEventListener('wheel', function (event) {
         Math.PI -
       90;
 
-    console.log(point.x);
-
     // Update the position and rotation of the car
     gsap.to(car, {
       x: point.x,

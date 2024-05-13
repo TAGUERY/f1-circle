@@ -272,8 +272,6 @@ function createPodium() {
     .sort((a, b) => b.nombre_de_coupes_du_monde - a.nombre_de_coupes_du_monde)
     .slice(0, 3);
 
-  console.log(podium);
-
   const documentPodium = [];
   documentPodium.push(document.getElementById("podium1"));
   documentPodium.push(document.getElementById("podium2"));

@@ -26,7 +26,6 @@ function createPilotesCircuitCircle() {
 
 createPilotesCircuitCircle();
 
-console.log("togglePilotsCircuitsBtn", togglePilotsCircuitsBtn);
 togglePilotsCircuitsBtn.addEventListener("click", () => {
   //console.log(togglePilotsCircuitsBtn.checked);
   bgPilotsCircuits.innerHTML = "";

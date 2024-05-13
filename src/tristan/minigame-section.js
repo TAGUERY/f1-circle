@@ -1,10 +1,161 @@
-function miniSpeedGame() {
-  const lights = document.querySelectorAll(".light");
-  const startStopButton = document.getElementById("startStopButton");
-  const bestTime = document.querySelector(".bestTime");
-  const runningTime = document.querySelector("#runningTime");
-  const lastTimeAll = document.querySelector(".scores");
+const lights = document.querySelectorAll(".light");
+const startStopButton = document.getElementById("startStopButton");
+const bestTime = document.querySelector(".bestTime");
+const runningTime = document.querySelector("#runningTime");
+const lastTimeAll = document.querySelector(".scores");
 
+function updateGraph(pilotes) {
+  // Sélectionnez les cercles et les images existantes et liez-les aux nouvelles données
+  const circles = d3
+    .select("#compare")
+    .select("svg")
+    .select("g")
+    .selectAll("circle")
+    .data(pilotes);
+  const images = d3
+    .select("#compare")
+    .select("svg")
+    .select("g")
+    .selectAll(".pilote-image")
+    .data(pilotes);
+
+  // Mettez à jour les positions des cercles avec les nouvelles données
+  circles
+    .transition()
+    .duration(1000)
+    .attr("cx", (d) => xScale(d.tempsDeReaction));
+
+  // Mettez à jour les positions et les images des images avec les nouvelles données
+  images
+    .transition()
+    .duration(1000)
+    .attr("xlink:href", (d) => d.image)
+    .attr("x", (d) => xScale(d.tempsDeReaction) - 10);
+}
+
+function miniGameCompare() {
+  document.querySelector("#compare").innerHTML = "";
+  console.log("miniGameCompare");
+  const bestTimeToShow = bestTime.textContent; // xxx ms
+  const bestTimeNumber = parseInt(bestTimeToShow); // xxx
+
+  const pilotes = [
+    {
+      nom: "Alex",
+      tempsDeReaction: 200,
+      image: "../../data/img/pilotes/albon.png",
+    },
+    {
+      nom: "Lewis",
+      tempsDeReaction: 700,
+      image: "../../data/img/pilotes/hamilton.png",
+    },
+    {
+      nom: "Charles",
+      tempsDeReaction: 600,
+      image: "../../data/img/pilotes/leclerc.png",
+    },
+    {
+      nom: "You",
+      tempsDeReaction: bestTimeNumber,
+      image: "../../data/img/pilotes/you.png",
+    },
+  ];
+
+  const windowWidth = window.innerWidth;
+  const width = windowWidth * 0.9;
+  const height = 200;
+
+  // Marge pour l'axe x
+  const margin = { top: 20, right: 50, bottom: 50, left: 50 }; // Réglage de la marge droite pour l'axe x
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+
+  // Création de l'élément SVG
+  const svg = d3
+    .select("#compare")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  // Groupe pour les éléments de graphique principal
+  const g = svg
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Echelle pour l'axe des x
+  const xScale = d3
+    .scaleLinear()
+    .domain([0, 1000]) // Plage de valeurs
+    .range([0, innerWidth]); // Espace de sortie
+
+  // Axe x
+  const xAxis = d3.axisBottom(xScale).tickSizeOuter(0);
+
+  // Ajout de l'axe x
+  g.append("g")
+    .attr("class", "x-axis") // Ajout de la classe pour l'axe x
+    .attr("transform", `translate(0, ${innerHeight})`)
+    .call(xAxis);
+
+  // Style CSS pour la barre de l'axe x et les graduations
+  d3.selectAll(".x-axis path, .x-axis line").style("stroke", "white"); // Couleur des barres de l'axe x et des graduations
+
+  // Style CSS pour les labels de l'axe x
+  d3.selectAll(".x-axis text")
+    .style("fill", "white") // Couleur du texte
+    .style("font-size", "14px") // Taille du texte
+    .attr("dy", "1.5em"); // Décalage vertical
+
+  // Ajout de "ms" à droite de l'axe x
+  g.select(".x-axis")
+    .append("text")
+    .attr("x", innerWidth + 30) // Position horizontale
+    .attr("y", -15) // Position verticale
+    .attr("fill", "white") // Couleur du texte
+    .text("ms");
+
+  // Création des cercles pour représenter les pilotes
+  g.selectAll("circle")
+    .data(pilotes)
+    .enter()
+    .append("circle")
+    .attr("cx", (d) => xScale(d.tempsDeReaction)) // Position sur l'axe des x en fonction du temps de réaction
+    .attr("cy", height / 1.6) // Position verticale fixe au centre
+    .attr("r", 0) // Rayon initial à 0
+    .style("fill", "red") // Couleur de remplissage
+    .transition() // Ajout de la transition
+    .duration(1000) // Durée de la transition en ms
+    .attr("r", 5); // Rayon final
+
+  // Ajout des images dans les cercles
+  g.selectAll(".pilote-image")
+    .data(pilotes)
+    .enter()
+    .append("image")
+    .attr("class", "pilote-image")
+    .attr("xlink:href", (d) => d.image)
+    .attr("x", (d) => xScale(d.tempsDeReaction) - 10) // Décalage de 10 pixels pour centrer l'image
+    .attr("y", height / 2 - 10) // Décalage de 10 pixels pour centrer l'image
+    .attr("width", 120) // Largeur de l'image
+    .attr("height", 120) // Hauteur de l'image
+    .attr("transform", "translate(-60, -100)") // Modifier le translate ici
+    .attr("opacity", 0) // Opacité initiale à 0
+    .transition() // Ajout de la transition
+    .duration(1000) // Durée de la transition en ms
+    .attr("opacity", 1); // Opacité finale à 1
+
+  // Mettre à jour le graphique uniquement si un nouveau meilleur temps est établi
+  if (
+    bestTimeNumber < pilotes[3].tempsDeReaction ||
+    pilotes[3].tempsDeReaction === 0
+  ) {
+    pilotes[3].tempsDeReaction = bestTimeNumber;
+    updateGraph(pilotes);
+  }
+}
+
+function miniSpeedGame() {
   let gameIsRunning = false;
   let timerRunning = false;
   let startTime;
@@ -30,9 +181,9 @@ function miniSpeedGame() {
 
     if (index < lights.length) {
       lights[index].style.backgroundColor = "red";
-      setTimeout(() => startCountDown(index + 1), 800); // Call startCountDown recursively with the next index after 0.8s
+      setTimeout(() => startCountDown(index + 1), 800);
     } else {
-      setTimeout(turnGreen, Math.random() * 600 + 300); // Trigger the green light after a random delay (between 0.3 and 0.9s)
+      setTimeout(turnGreen, Math.random() * 600 + 300);
     }
   }
 
@@ -48,7 +199,7 @@ function miniSpeedGame() {
   }
 
   function startTimer() {
-    intervalId = setInterval(updateTimer, 1); // Update the timer every millisecond
+    intervalId = setInterval(updateTimer, 1);
   }
 
   function updateTimer() {
@@ -71,10 +222,12 @@ function miniSpeedGame() {
       return;
     } else {
       if (
-        runningTime.textContent < bestTime.textContent ||
+        parseInt(runningTime.textContent) < parseInt(bestTime.textContent) ||
         bestTime.textContent === "--- ms"
       ) {
         bestTime.textContent = `${runningTime.textContent}`;
+        miniGameCompare();
+        console.log("best time");
       }
       reset();
     }
