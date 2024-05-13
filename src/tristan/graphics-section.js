@@ -199,15 +199,13 @@ function createWorldMap() {
       .attr("d", path)
       .style("stroke", "white")
       .style("fill", function (d) {
-        // Vérifier si le pays a des pilotes
         const countryName = d.properties.name;
         if (countryName && pilotesParPays[countryName]) {
-          return "lightcoral"; // Couleur différente pour les pays avec des pilotes
+          return "lightcoral";
         } else {
-          return "lightgray"; // Couleur par défaut pour les autres pays
+          return "lightgray";
         }
       })
-      // Gestion des événements au survol du pays
       .on("mouseover", function (d, event) {
         const countryName = d.properties.name;
         if (countryName && pilotesParPays[countryName]) {

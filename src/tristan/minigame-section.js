@@ -4,56 +4,21 @@ const bestTime = document.querySelector(".bestTime");
 const runningTime = document.querySelector("#runningTime");
 const lastTimeAll = document.querySelector(".scores");
 
-function updateGraph(pilotes) {
-  // Sélectionnez les cercles et les images existantes et liez-les aux nouvelles données
-  const circles = d3
-    .select("#compare")
-    .select("svg")
-    .select("g")
-    .selectAll("circle")
-    .data(pilotes);
-  const images = d3
-    .select("#compare")
-    .select("svg")
-    .select("g")
-    .selectAll(".pilote-image")
-    .data(pilotes);
-
-  // Mettez à jour les positions des cercles avec les nouvelles données
-  circles
-    .transition()
-    .duration(1000)
-    .attr("cx", (d) => xScale(d.tempsDeReaction));
-
-  // Mettez à jour les positions et les images des images avec les nouvelles données
-  images
-    .transition()
-    .duration(1000)
-    .attr("xlink:href", (d) => d.image)
-    .attr("x", (d) => xScale(d.tempsDeReaction) - 10);
-}
-
 function miniGameCompare() {
   document.querySelector("#compare").innerHTML = "";
-  console.log("miniGameCompare");
   const bestTimeToShow = bestTime.textContent; // xxx ms
   const bestTimeNumber = parseInt(bestTimeToShow); // xxx
 
   const pilotes = [
     {
-      nom: "Alex",
-      tempsDeReaction: 200,
-      image: "../../data/img/pilotes/albon.png",
+      nom: "Lando",
+      tempsDeReaction: 90,
+      image: "../../data/img/pilotes/norris.png",
     },
     {
       nom: "Lewis",
-      tempsDeReaction: 700,
+      tempsDeReaction: 200,
       image: "../../data/img/pilotes/hamilton.png",
-    },
-    {
-      nom: "Charles",
-      tempsDeReaction: 600,
-      image: "../../data/img/pilotes/leclerc.png",
     },
     {
       nom: "You",
@@ -144,15 +109,6 @@ function miniGameCompare() {
     .transition() // Ajout de la transition
     .duration(1000) // Durée de la transition en ms
     .attr("opacity", 1); // Opacité finale à 1
-
-  // Mettre à jour le graphique uniquement si un nouveau meilleur temps est établi
-  if (
-    bestTimeNumber < pilotes[3].tempsDeReaction ||
-    pilotes[3].tempsDeReaction === 0
-  ) {
-    pilotes[3].tempsDeReaction = bestTimeNumber;
-    updateGraph(pilotes);
-  }
 }
 
 function miniSpeedGame() {
@@ -222,7 +178,7 @@ function miniSpeedGame() {
       return;
     } else {
       if (
-        parseInt(runningTime.textContent) < parseInt(bestTime.textContent) ||
+        runningTime.textContent < bestTime.textContent ||
         bestTime.textContent === "--- ms"
       ) {
         bestTime.textContent = `${runningTime.textContent}`;

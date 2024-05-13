@@ -81,7 +81,7 @@ ScrollTrigger.create({
 const f1Container = document.querySelector("#f1Emoji");
 
 // Nombre d'emojis F1 à afficher pour couvrir toute la largeur de la page
-const numberOfCars = Math.floor(window.innerWidth / 95); // Taille approximative d'une voiture
+const numberOfCars = Math.floor(window.innerWidth / 90); // Taille approximative d'une voiture
 
 // Créez une chaîne contenant l'emoji F1
 const f1Emoji = "🏎️";
