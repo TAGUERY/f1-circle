@@ -11,25 +11,7 @@ function firstPart() {
 
   // Get the total length of the path
   const pathLength = path.getTotalLength();
-  /*
-let scrollSpeed = 1.5;
 
-// Add an event listener for the 'wheel' event
-document.addEventListener('wheel', function (event) {
-    // Prevent default scrolling behavior
-    event.preventDefault();
-
-    // Calculate the new scroll position
-    let delta = event.deltaY;
-    let scrollPosition = window.scrollY + (delta * scrollSpeed);
-
-    // Set the new scroll position
-    window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-    });
-}, { passive: false });
-*/
   const lastPoint = 0;
 
   function updatePosition() {
@@ -50,7 +32,7 @@ document.addEventListener('wheel', function (event) {
     // Calculate the angle between the current point and the next point
     const angle =
       (Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * 180) /
-        Math.PI -
+      Math.PI -
       90;
 
     console.log(point.x);
@@ -86,7 +68,7 @@ document.addEventListener('wheel', function (event) {
       start: "top top", // Dès le début de l'élément de déclenchement
       end: "1200px top", // Jusqu'à 1500 pixels de défilement
       pin: true, // Fixe l'élément en place
-      scrub: 10000, // Activer le mode "scrubbing" pour une animation en douceur
+      scrub: 1, // Activer le mode "scrubbing" pour une animation en douceur
       onUpdate: (self) => {
         // Mettre à jour l'opacité de l'image en fonction du progrès de la timeline
         gsap.to("#f1LogoHerroBanner", {

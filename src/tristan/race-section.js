@@ -4,31 +4,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 function firstPart() {
   // Register ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);
+
   // Get the path and the car
   const path = document.querySelector("#pathCircuitHerroBanner");
   const car = document.querySelector("#f1Car");
 
   // Get the total length of the path
   const pathLength = path.getTotalLength();
-  /*
-let scrollSpeed = 1.5;
-
-// Add an event listener for the 'wheel' event
-document.addEventListener('wheel', function (event) {
-    // Prevent default scrolling behavior
-    event.preventDefault();
-
-    // Calculate the new scroll position
-    let delta = event.deltaY;
-    let scrollPosition = window.scrollY + (delta * scrollSpeed);
-
-    // Set the new scroll position
-    window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-    });
-}, { passive: false });
-*/
 
   const lastPoint = 0;
 
@@ -37,7 +19,7 @@ document.addEventListener('wheel', function (event) {
     const scrollY = window.scrollY || window.pageYOffset;
 
     // Calculate the new position on the path
-    const newPathPosition = (scrollY * 1.19) / document.body.scrollHeight;
+    const newPathPosition = (scrollY * 4.1) / document.body.scrollHeight;
 
     // Get the point on the path
     const point = path.getPointAtLength(newPathPosition * pathLength);
@@ -50,8 +32,10 @@ document.addEventListener('wheel', function (event) {
     // Calculate the angle between the current point and the next point
     const angle =
       (Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * 180) /
-        Math.PI -
+      Math.PI -
       90;
+
+    console.log(point.x);
 
     // Update the position and rotation of the car
     gsap.to(car, {
@@ -82,9 +66,9 @@ document.addEventListener('wheel', function (event) {
     scrollTrigger: {
       trigger: "#fixedArea",
       start: "top top", // Dès le début de l'élément de déclenchement
-      end: "+=8000 top", // Déclencher lorsque le haut de l'élément de déclenchement atteint le haut de la fenêtre plus 1200 pixels
+      end: "1500px top", // Jusqu'à 1500 pixels de défilement
       pin: true, // Fixe l'élément en place
-      scrub: 3000, // Activer le mode "scrubbing" pour une animation en douceur
+      scrub: 10000, // Activer le mode "scrubbing" pour une animation en douceur
       onUpdate: (self) => {
         // Mettre à jour l'opacité de l'image en fonction du progrès de la timeline
         gsap.to("#f1LogoHerroBanner", {
