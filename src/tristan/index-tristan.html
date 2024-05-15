@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +14,15 @@
   <link rel="stylesheet" href="tristan-css.css" />
 </head>
 
+
 <body>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Pour une meilleure expérience, veuillez passer en plein écran (F11) ou ou utiliser un écran
+        plus grand.</p>
+    </div>
+  </div>
   <div class="container-f1-scroll">
     <style>
       @font-face {
@@ -64,33 +73,6 @@
         font-size: 15px;
       }
 
-      @media (max-width: 1536px) {
-        #anecdote_1 {
-          top: 23.5%;
-          right: 2%;
-          width: 45%;
-        }
-
-        #anecdote_2 {
-          top: 36.5%;
-          width: 40%;
-          left: 2%;
-        }
-
-        #anecdote_3 {
-          top: 49%;
-          right: 2%;
-          width: 50%;
-        }
-
-        #anecdote_4 {
-          top: 66%;
-          left: 2%;
-          width: 35%;
-        }
-
-      }
-
       @media (max-width: 1920px) {
         #anecdote_1 {
           top: 30%;
@@ -117,6 +99,214 @@
         }
       }
 
+      @media (max-width: 1900px) {
+        #anecdote_1 {
+          top: 29.5%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 46%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 61%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 82%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 1850px) {
+        #anecdote_1 {
+          top: 29%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 45%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 59.5%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 80%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 1800px) {
+        #anecdote_1 {
+          top: 28%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 43.5%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 58%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 77%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 1750px) {
+        #anecdote_1 {
+          top: 27%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 42%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 56%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 75.5%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 1700px) {
+        #anecdote_1 {
+          top: 26.5%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 41%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 54.5%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 73%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 1650px) {
+        #anecdote_1 {
+          top: 25.5%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 39.5%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 53%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 71%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 1600px) {
+        #anecdote_1 {
+          top: 24.5%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 38.5%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 51.5%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 68.5%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 1536px) {
+        #anecdote_1 {
+          top: 23.5%;
+          right: 2%;
+          width: 45%;
+        }
+
+        #anecdote_2 {
+          top: 36.5%;
+          width: 40%;
+          left: 2%;
+        }
+
+        #anecdote_3 {
+          top: 49%;
+          right: 2%;
+          width: 50%;
+        }
+
+        #anecdote_4 {
+          top: 66%;
+          left: 2%;
+          width: 35%;
+        }
+      }
+
 
 
 
@@ -124,42 +314,67 @@
         background: linear-gradient(to bottom, rgb(35, 182, 227), #1b1b1b);
       }
     </style>
+
+    <script type="module">
+      import anecdotes from "/data/anecdotes.json";
+
+      console.log(anecdotes);
+
+      let question1 = anecdotes.anecdotes[0].question;
+      let question2 = anecdotes.anecdotes[3].question;
+      let question3 = anecdotes.anecdotes[1].question;
+      let question4 = anecdotes.anecdotes[4].question;
+
+      let reponse1 = anecdotes.anecdotes[0].reponse;
+      let reponse2 = anecdotes.anecdotes[3].reponse;
+      let reponse3 = anecdotes.anecdotes[1].reponse;
+      let reponse4 = anecdotes.anecdotes[4].reponse;
+
+      window.onload = function () {
+        document.querySelector('#anecdote_1 .firstTitleAnecdote').textContent = question1;
+        document.querySelector('#anecdote_1 .secondTitleAnecdote').textContent = reponse1;
+
+        document.querySelector('#anecdote_2 .firstTitleAnecdote').textContent = question2;
+        document.querySelector('#anecdote_2 .secondTitleAnecdote').textContent = reponse2;
+
+        document.querySelector('#anecdote_3 .firstTitleAnecdote').textContent = question3;
+        document.querySelector('#anecdote_3 .secondTitleAnecdote').textContent = reponse3;
+
+        document.querySelector('#anecdote_4 .firstTitleAnecdote').textContent = question4;
+        document.querySelector('#anecdote_4 .secondTitleAnecdote').textContent = reponse4;
+      }
+    </script>
     <div id="fixedArea" style="height: 4400px; width: 100%">
       <div id="anecdote_1" class="anecdote">
         <h1 class="firstTitleAnecdote">
-          How much water do Formula 1 drivers lose during a race ?
+
         </h1>
         <h1 class="secondTitleAnecdote">
-          F1 drivers can lose up to 3 liters of body water during a race due
-          to the physical demands and heat inside the cockpit.
+
         </h1>
       </div>
       <div id="anecdote_2" class="anecdote">
         <h1 class="firstTitleAnecdote">
-          Which F1 track is the shortest in terms of racing distance ?
+
         </h1>
         <h1 class="secondTitleAnecdote">
-          The Circuit de Monaco is the shortest Formula 1 track, with a race
-          distance of about 260 kilometers.
+
         </h1>
       </div>
       <div id="anecdote_3" class="anecdote">
         <h1 class="firstTitleAnecdote">
-          What is the record time for a tire change during a Formula 1 pit
-          stop ?
+
         </h1>
         <h1 class="secondTitleAnecdote">
-          The record time is 1.82 seconds, achieved by the Red Bull Racing
-          team during the Brazilian Grand Prix in 2019.
+
         </h1>
       </div>
       <div id="anecdote_4" class="anecdote">
         <h1 class="firstTitleAnecdote">
-          What is the age requirement for Formula 1 drivers ?
+
         </h1>
         <h1 class="secondTitleAnecdote">
-          Formula 1 drivers must be at least 18 years old to compete in the
-          championship.
+
         </h1>
       </div>
       <img src="/assets/img/f1Logo.png" alt="" id="f1LogoHerroBanner" />
@@ -854,6 +1069,24 @@
       </div>
     </div>
   </div>
+  <script>
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    window.addEventListener('resize', function () {
+      var width = window.innerWidth;
+
+      if (width < 1600) {
+        modal.style.display = "block";
+      } else {
+        modal.style.display = "none";
+      }
+    });
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 
 </html>
