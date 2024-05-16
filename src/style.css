@@ -836,3 +836,8 @@ body:has(.switch__input:checked) {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+body.overflow-hidden {
+  overflow: hidden;
+}
