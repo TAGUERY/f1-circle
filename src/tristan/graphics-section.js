@@ -70,18 +70,6 @@ function createGraphicsPilotes() {
     .attr("height", height)
     .attr("fill", "transparent");
 
-  svg
-    .append("defs")
-    .append("pattern")
-    .attr("id", "imagePattern")
-    .attr("patternUnits", "userSpaceOnUse")
-    .attr("width", 20)
-    .attr("height", 20)
-    .append("image")
-    .attr("xlink:href", "../../assets/img/damierFinal.png")
-    .attr("width", 20)
-    .attr("height", 20);
-
   // Utilisez le motif de remplissage pour vos barres
   svg
     .selectAll(".bar")
@@ -95,7 +83,23 @@ function createGraphicsPilotes() {
     .attr("height", y.bandwidth())
     .attr("fill", (d, i) => {
       if (i % 2 === 0) {
-        return "url(#imagePattern)";
+        const gradient = svg
+          .append("defs")
+          .append("linearGradient")
+          .attr("id", "gradient" + i)
+          .attr("x1", "0%")
+          .attr("y1", "0%")
+          .attr("x2", "100%")
+          .attr("y2", "0%");
+        gradient
+          .append("stop")
+          .attr("offset", "0%")
+          .attr("stop-color", "white");
+        gradient
+          .append("stop")
+          .attr("offset", "100%")
+          .attr("stop-color", "gray");
+        return "url(#gradient" + i + ")";
       } else {
         const gradient = svg
           .append("defs")

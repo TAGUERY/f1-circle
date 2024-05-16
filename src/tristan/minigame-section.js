@@ -177,14 +177,18 @@ function miniSpeedGame() {
       reset();
       return;
     } else {
+      const runningTimeValue = parseInt(runningTime.textContent);
+      const bestTimeValue = parseInt(bestTime.textContent);
+
       if (
-        runningTime.textContent < bestTime.textContent ||
+        runningTimeValue < bestTimeValue ||
         bestTime.textContent === "--- ms"
       ) {
         bestTime.textContent = `${runningTime.textContent}`;
         miniGameCompare();
         console.log("best time");
       }
+
       reset();
     }
   };
