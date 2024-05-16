@@ -70,20 +70,17 @@ function createGraphicsPilotes() {
     .attr("height", height)
     .attr("fill", "transparent");
 
-  // Créer le motif de remplissage dans le <defs>
   svg
     .append("defs")
     .append("pattern")
     .attr("id", "imagePattern")
     .attr("patternUnits", "userSpaceOnUse")
-    .attr("width", y.bandwidth()) // Utiliser la largeur de la case
-    .attr("height", y.bandwidth()) // Utiliser la hauteur de la case
+    .attr("width", 20)
+    .attr("height", 20)
     .append("image")
-    .attr("xlink:href", "../../assets/img/image_good.png")
-    .attr("width", y.bandwidth()) // Utiliser la largeur de la case
-    .attr("height", y.bandwidth()) // Utiliser la hauteur de la case
-    .attr("x", 0) // Définir la position x de l'image à 0
-    .attr("y", 0); // Définir la position y de l'image à 0
+    .attr("xlink:href", "../../assets/img/damierFinal.png")
+    .attr("width", 20)
+    .attr("height", 20);
 
   // Utilisez le motif de remplissage pour vos barres
   svg
