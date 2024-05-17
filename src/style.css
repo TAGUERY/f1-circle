@@ -841,3 +841,7 @@ body:has(.switch__input:checked) {
 body.overflow-hidden {
   overflow: hidden;
 }
+
+body {
+  background-color: #262525;
+}
