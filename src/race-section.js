@@ -2,10 +2,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const audioData = [
-  { file: '/data/audio/audio3.mp3', start: 1738, end: 2346 },
-  { file: '/data/audio/audio3.mp3', start: 2350, end: 2958 },
-  { file: '/data/audio/audio3.mp3', start: 3064, end: 3672 },
-  { file: '/data/audio/audio3.mp3', start: 3780, end: 4500 },
+  { file: '../data/audio/audio3.mp3', start: 1738, end: 2346 },
+  { file: '../data/audio/audio3.mp3', start: 2350, end: 2958 },
+  { file: '../data/audio/audio3.mp3', start: 3064, end: 3672 },
+  { file: '../data/audio/audio3.mp3', start: 3780, end: 4500 },
   // Ajoutez d'autres fichiers audio avec leurs plages de défilement ici
 ];
 const audioElements = []; // Conservez une référence aux éléments audio pour les contrôler
@@ -57,7 +57,6 @@ function firstPart() {
 
     // Get the scroll position
     const scrollY = window.scrollY || window.pageYOffset;
-    console.log(scrollY);
     // Calculate the new position on the path
     const newPathPosition = (scrollY * 4.1) / (document.body.scrollHeight - window.innerHeight);
 
