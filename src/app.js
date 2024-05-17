@@ -67,7 +67,11 @@ timeline
     .from("#gray", { yPercent: 100 })
     .to("#bleu", { yPercent: -100 }, "<")
     .addLabel("gray_end")
-    .add(() => audio.play(), 'gray_end') // Change this line
+    .add(() => {
+        audio.currentTime = 13;
+        audio.volume = 0.4;
+        audio.play();
+    }, 'gray_end') // Change this line
     .from("#pink", { yPercent: 100 })
     .addLabel("pink_end")
     .eventCallback("onReverseComplete", function () {
