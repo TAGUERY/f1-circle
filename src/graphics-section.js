@@ -185,6 +185,12 @@ function createWorldMap() {
     pilotesParPays[pilote.pays_origine].push(pilote);
   });
 
+  // Définir une échelle de couleur
+  const colorScale = d3
+    .scaleLinear()
+    .domain([1, 2, 3])
+    .range(["#FC9090", "#B25757", "#9E0000"]);
+
   // Charger les données géographiques mondiales
   d3.json(
     "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
@@ -201,12 +207,16 @@ function createWorldMap() {
       .style("stroke", "white")
       .style("fill", function (d) {
         const countryName = d.properties.name;
-        if (countryName && pilotesParPays[countryName]) {
-          return "lightcoral";
+        const pilotCount = pilotesParPays[countryName]
+          ? pilotesParPays[countryName].length
+          : 0;
+        if (pilotCount > 0) {
+          return colorScale(Math.min(pilotCount, 3));
         } else {
           return "lightgray";
         }
       })
+
       .on("mouseover", function (d, event) {
         const countryName = d.properties.name;
         if (countryName && pilotesParPays[countryName]) {
