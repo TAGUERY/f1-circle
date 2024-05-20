@@ -107,7 +107,6 @@ function firstPart() {
       (Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * 180) /
       Math.PI -
       90;
-    console.log(point.y)
     // Update the position and rotation of the car
     gsap.to(car, {
       x: point.x,
