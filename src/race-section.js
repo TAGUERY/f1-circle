@@ -10,6 +10,15 @@ const audioData = [
 ];
 const audioElements = []; // Conservez une référence aux éléments audio pour les contrôler
 
+const titleData = [
+  { selector: '#anecdote_1 .secondTitleAnecdote', start: 1290, end: 1715 },
+  { selector: '#anecdote_2 .secondTitleAnecdote', start: 1794, end: 2315 },
+  { selector: '#anecdote_3 .secondTitleAnecdote', start: 2502, end: 2922 },
+  { selector: '#anecdote_4 .secondTitleAnecdote', start: 3277, end: 3662 },
+]
+
+const titleElements = [];
+
 function setupAudio() {
   // Créez les éléments audio et ajoutez-les à la page
   audioData.forEach(({ file }) => {
@@ -19,10 +28,32 @@ function setupAudio() {
   });
 }
 
+function setupTitles() {
+  // Sélectionnez les éléments de titre et ajoutez-les au tableau
+  titleData.forEach(({ selector }) => {
+    const title = document.querySelector(selector);
+    titleElements.push(title);
+  });
+}
+
+function updateTitleOpacity() {
+  // Obtenez la position de défilement actuelle
+  const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Mettez à jour l'opacité de chaque titre en fonction de la position de défilement
+  titleElements.forEach((title, index) => {
+    if (scrollPosition >= titleData[index].start && scrollPosition <= titleData[index].end) {
+      title.style.opacity = 1;
+    } else {
+      title.style.opacity = 0;
+    }
+  });
+}
+
+
 function updateAudioPlayback() {
   // Obtenez la position de défilement actuelle
   const scrollY = window.scrollY || window.pageYOffset;
-
   // Parcourez chaque donnée audio
   audioData.forEach(({ start, end }, index) => {
     // Vérifiez si la position de défilement se situe dans la plage de ce fichier audio
@@ -53,6 +84,7 @@ function firstPart() {
 
   let isPlaying = false;
 
+
   function updatePosition() {
 
     // Get the scroll position
@@ -75,7 +107,7 @@ function firstPart() {
       (Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * 180) /
       Math.PI -
       90;
-
+    console.log(point.y)
     // Update the position and rotation of the car
     gsap.to(car, {
       x: point.x,
@@ -89,14 +121,18 @@ function firstPart() {
   // Listen for scroll events
   window.addEventListener("scroll", updatePosition);
   window.addEventListener("scroll", updateAudioPlayback);
+  window.addEventListener('scroll', updateTitleOpacity);
 
   // Update the position at the start
   setupAudio();
   updateAudioPlayback();
   updatePosition();
+  updateTitleOpacity();
+
 
   // Initialisation de l'opacité de l'image à 0
   gsap.set("#f1LogoHerroBanner", { opacity: 0 });
+
 
   // Création d'une timeline
   const tl = gsap.timeline();
