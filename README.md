@@ -41,3 +41,6 @@ Les données utilisées via le site de la formule 1 est utilisé par beaucoup d'
 
 ** Maquette Figma **
 https://www.figma.com/file/aHjqff5qHTj6d1IeCdGtXg/Maquette-f1circle?type=design&node-id=0%3A1&mode=design&t=QFFKYciPC3J9L0yE-1
+
+** Lien du site publié **
+https://f1-circle-comem-m512.netlify.app/
